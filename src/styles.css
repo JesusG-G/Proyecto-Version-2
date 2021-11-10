@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.formulario{
+    max-width: 480px; 
+    margin: auto;
+    padding: 20px 30px;
+    margin-top: 50px;
+}
+
+.menuLogin{
+    max-width: 480px;
+    margin-bottom: 0px;
+    margin:auto;
+}
