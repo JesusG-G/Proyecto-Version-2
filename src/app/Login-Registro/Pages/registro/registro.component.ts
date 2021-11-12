@@ -1,41 +1,33 @@
-<<<<<<< HEAD
 import { Component} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-=======
-import { Component, OnInit } from '@angular/core';
->>>>>>> 587e0f42d356c5c2c6cd61214cdd66c867ba9799
+import { CRUDService } from '../../services/crud.service';
+
+
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html'
 })
-<<<<<<< HEAD
 export class RegistroComponent  {
 
   formularioRegistro:FormGroup;
 
 
-  constructor(public formulario:FormBuilder) {
+  constructor(public formulario:FormBuilder,
+              private crudService:CRUDService
+  ) {
     this.formularioRegistro=this.formulario.group({
       Nombres:[''],
       Apellidos:[''],
       CI:[''],
-      contraseña:[''],
-      confirContraseña:['']
+      contrasena:[''],
+      confirContrasena:['']
     })
    }
 
   enviarDatos(){
-   
-    console.log("Me presionaste prueba");
     console.log(this.formularioRegistro.value);
-=======
-export class RegistroComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
->>>>>>> 587e0f42d356c5c2c6cd61214cdd66c867ba9799
+    this.crudService.AgregarRegistro(this.formularioRegistro.value).subscribe();
   }
 
 }
