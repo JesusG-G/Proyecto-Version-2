@@ -1,6 +1,9 @@
-import { Component} from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { Component, OnInit} from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { first } from 'rxjs/operators';
 import { CRUDService } from '../../services/crud.service';
+import { ValidadorService } from '../../services/validador.service'
 
 
 
@@ -8,26 +11,56 @@ import { CRUDService } from '../../services/crud.service';
   selector: 'app-registro',
   templateUrl: './registro.component.html'
 })
-export class RegistroComponent  {
+export class RegistroComponent implements OnInit {
 
-  formularioRegistro:FormGroup;
-
+  formularioRegistro!:FormGroup;
+  aprobar: boolean= true;
 
   constructor(public formulario:FormBuilder,
-              private crudService:CRUDService
-  ) {
+              private crudService:CRUDService,
+              private router:Router,
+              private validador:ValidadorService
+  ) {}
+   
+   ngOnInit(){
     this.formularioRegistro=this.formulario.group({
-      Nombres:[''],
-      Apellidos:[''],
-      CI:[''],
-      contrasena:[''],
-      confirContrasena:['']
-    })
+      Nombres:['',[Validators.required,Validators.minLength(1)]],
+      Apellidos:['',[Validators.required,Validators.minLength(1)]],
+      CI:['',[Validators.required,Validators.minLength(1)]],
+      contrasena:['',[Validators.compose([Validators.required, this.validador.Validaciondepatrones()])]],
+      confirContrasena:['',[Validators.required]]
+    },
+    {
+      validator:this.validador.CompararContrasena('contrasena','confirContrasena')
+    }
+    )
    }
 
-  enviarDatos(){
-    console.log(this.formularioRegistro.value);
-    this.crudService.AgregarRegistro(this.formularioRegistro.value).subscribe();
+   get controlFormularioRegistro(){
+     return this.formularioRegistro.controls;
+   }
+
+   aceptado(){
+     this.aprobar=true;
+     if(this.formularioRegistro.valid){
+       alert('Exito');
+       this.enviarDatos(this.formularioRegistro);
+       console.table(this.formularioRegistro.value);
+     }
+   }
+
+   
+   enviarDatos(formularioRegistro:FormGroup){
+    console.log(formularioRegistro.value);
+    this.crudService.AgregarRegistro(formularioRegistro.value.Nombres,formularioRegistro.value.Apellidos,
+      formularioRegistro.value.CI,formularioRegistro.value.contrasena).pipe(first()).subscribe(data=>this.router.navigate(['login'])
+        )}
+
+    get Nombres() { return this.formularioRegistro.get('Nombres'); }
+    get Apellidos() { return this.formularioRegistro.get('Apellidos'); }
+    get CI() { return this.formularioRegistro.get('CI'); }
+    get contrasena() { return this.formularioRegistro.get('contrasena'); }
+    
   }
 
-}
+
