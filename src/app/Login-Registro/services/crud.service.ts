@@ -24,11 +24,14 @@ export class CRUDService {
   }
 
   public InicioSesion(CI:string,contrasena:string):Observable<any>{
+    console.log(CI,contrasena);
     return this.clienteHttp.post<any>(this.API+'/login.php',{CI,contrasena}).pipe(map(RegistroUsuario=>{
-      this.setToken(RegistroUsuario[0].Nombres);
-      this.nombreInicioSesion.emit(true);
+      //this.setToken(RegistroUsuario[0].Nombres);
+      //this.nombreInicioSesion.emit(true);
       return RegistroUsuario;}));
-  }
+      
+    }
+  
 
   //Token
   setToken(token:string){

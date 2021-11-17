@@ -6,6 +6,7 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegistroComponent } from './Pages/registro/registro.component';
 import { MenuComponent } from './Components/menu/menu.component';
 import { RoutingModule } from '../routing.module';
+import { LRRoutingModule } from './lrrouting.module';
 
 
 
@@ -15,16 +16,11 @@ import { RoutingModule } from '../routing.module';
     RegistroComponent,
     MenuComponent
   ],
-  exports:[
-    LoginComponent,
-    RegistroComponent,
-    MenuComponent
-  ],
   imports: [
     CommonModule,
-    RoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LRRoutingModule
   ]
 })
 export class LoginRegistroModule { }

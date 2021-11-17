@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import {Router, RouterModule,Routes} from '@angular/router';
-import { LoginComponent } from './Login-Registro/Pages/login/login.component';
-import { RegistroComponent } from './Login-Registro/Pages/registro/registro.component';
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 
 const routes:Routes=[
   {
-    path:'login',
-    component: LoginComponent,
-    pathMatch: 'full'
+    path:'auth',
+    loadChildren: () => import('./Login-Registro/login-registro.module').then(m=>m.LoginRegistroModule)
   },
   {
-    path:'registro',
-    component:RegistroComponent
+    path:'404',
+    component:ErrorPageComponent
   },
   {
     path:'**',
-    redirectTo:'login'
+    redirectTo:'404'
   }
 ];
 
