@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LRRoutingModule } from './lrrouting.module';
 
+//Componentes
 import { LoginComponent } from './Pages/login/login.component';
 import { RegistroComponent } from './Pages/registro/registro.component';
 import { MenuComponent } from './Components/menu/menu.component';
-import { RoutingModule } from '../routing.module';
-import { LRRoutingModule } from './lrrouting.module';
+
 
 
 

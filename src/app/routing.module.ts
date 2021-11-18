@@ -9,6 +9,10 @@ const routes:Routes=[
     loadChildren: () => import('./Login-Registro/login-registro.module').then(m=>m.LoginRegistroModule)
   },
   {
+    path:'usuario',
+    loadChildren: ()=> import('./usuario/usuario.module').then(m=>m.UsuarioModule)
+  },
+  {
     path:'404',
     component:ErrorPageComponent
   },

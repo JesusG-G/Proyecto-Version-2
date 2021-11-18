@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginRegistroModule } from './Login-Registro/login-registro.module';
 import { SharedModule } from './shared/shared.module';
+import { UsuarioModule } from './usuario/usuario.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    UsuarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
