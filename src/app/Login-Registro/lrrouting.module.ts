@@ -5,7 +5,7 @@ import { RegistroComponent } from './Pages/registro/registro.component';
 
 const routes: Routes=[
   {
-    path:'auth',
+    path:'',
     children:[
       {
         path:'login',

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsuarioRoutingModule } from './usuario-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { MaterialModule } from '../material/material.module';
 
 //Compoenentes
 import { HomeComponent } from './Pages/home/home.component';
@@ -15,6 +17,8 @@ import { TramitarConstanciaDomicilioFiscalComponent } from './Pages/Solicitudes/
 import { EfectuarCambioDireccionActividadEconomicaComponent } from './Pages/Solicitudes/efectuar-cambio-direccion-actividad-economica/efectuar-cambio-direccion-actividad-economica.component';
 import { OtorgarPermisoFuncionamientoComponent } from './Pages/Solicitudes/otorgar-permiso-funcionamiento/otorgar-permiso-funcionamiento.component';
 import { SolicitarSolvenciaMunicipalComponent } from './Pages/Solicitudes/solicitar-solvencia-municipal/solicitar-solvencia-municipal.component';
+import { BienvenidaComponent } from './Pages/bienvenida/bienvenida.component';
+
 
 
 
@@ -32,11 +36,14 @@ import { SolicitarSolvenciaMunicipalComponent } from './Pages/Solicitudes/solici
     TramitarConstanciaDomicilioFiscalComponent,
     EfectuarCambioDireccionActividadEconomicaComponent,
     OtorgarPermisoFuncionamientoComponent,
-    SolicitarSolvenciaMunicipalComponent
+    SolicitarSolvenciaMunicipalComponent,
+    BienvenidaComponent
   ],
   imports: [
     CommonModule,
-    UsuarioRoutingModule
+    UsuarioRoutingModule,
+    SharedModule,
+    MaterialModule
   ]
 })
 export class UsuarioModule { }

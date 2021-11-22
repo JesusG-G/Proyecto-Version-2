@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { LoginRegistroModule } from './Login-Registro/login-registro.module';
 import { SharedModule } from './shared/shared.module';
 import { UsuarioModule } from './usuario/usuario.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 
 @NgModule({
@@ -16,13 +18,15 @@ import { UsuarioModule } from './usuario/usuario.module';
   ],
   imports: [
     BrowserModule,
-    LoginRegistroModule,
     RoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     SharedModule,
-    UsuarioModule
+    LoginRegistroModule,
+    UsuarioModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

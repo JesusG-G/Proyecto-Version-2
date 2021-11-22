@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
 @NgModule({
   declarations: [
-    ErrorPageComponent
+    ErrorPageComponent,
+    SidenavComponent,
+    ToolbarComponent
   ],
   exports:[
-    ErrorPageComponent
+    ErrorPageComponent,
+    SidenavComponent,
+    ToolbarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
   ]
 })
 export class SharedModule { }

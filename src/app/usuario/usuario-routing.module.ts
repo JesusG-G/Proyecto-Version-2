@@ -13,14 +13,16 @@ import { OtorgarPermisoFuncionamientoComponent } from './Pages/Solicitudes/otorg
 import { RenovacionLicenciaActividadesEconomicasLicoresComponent } from './Pages/Solicitudes/renovacion-licencia-actividades-economicas-licores/renovacion-licencia-actividades-economicas-licores.component';
 import { SolicitarSolvenciaMunicipalComponent } from './Pages/Solicitudes/solicitar-solvencia-municipal/solicitar-solvencia-municipal.component';
 import { TramitarConstanciaDomicilioFiscalComponent } from './Pages/Solicitudes/tramitar-constancia-domicilio-fiscal/tramitar-constancia-domicilio-fiscal.component';
+import { BienvenidaComponent } from './Pages/bienvenida/bienvenida.component';
 
 const routes:Routes=[
   {
     path:'',
+    component:HomeComponent,
     children:[
       {
         path:'Inicio',
-        component: HomeComponent
+        component: BienvenidaComponent
       },
       {
         path:'CambioDireccionActividadEconomica',

@@ -1,4 +1,35 @@
 
+
+
+<div class="container fondo">
+<mat-card class="border border-dark text-center rounded-3 shadow-lg formulario">
+    <mat-card-header class="justify-content-center" >
+        <mat-card-title>Inicio de Sesión</mat-card-title>
+        <mat-card-subtitle>
+            <mat-icon class="icono-display espaciadoMatContent">account_circle</mat-icon>
+        </mat-card-subtitle>
+        
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="espaciadoMatContent">
+        <form [formGroup]="loginDatos" (ngSubmit)="inicioSesion(loginDatos)" >
+            <mat-form-field appearance="outline" class="max-width">
+                <mat-label>Cédula</mat-label>
+                <input matInput type="text" formControlName="CI" name="CI" id="CI" class="form-control" placeholder="Cédula" required autofocus autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="max-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" formControlName="contrasena" name="Contrasena" id="contrasena" class="form-control" placeholder="Contraseña" required autofocus autocomplete="off">
+            </mat-form-field>
+            </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="warm" type="submit" class="btn btn-danger">Ingresar</button>
+        <button mat-raised-button color="warm" routerLink="/auth/registro" class="btn btn-danger">Registro</button> 
+    </mat-card-actions>
+</mat-card>
+</div>
+<!--
 <div class="container animate__animated animate__fadeIn">
 
 <div class="container">
@@ -16,9 +47,10 @@
        </div>
        <div class="mt-3">
            <button type="submit" class="btn btn-danger">Ingresar</button>
-            <button routerLink="/auth/registro">Registro</button>
+            <button routerLink="/auth/registro" class="btn btn-danger">Registro</button>
         </div>
    </form>
 
 </div>
 
+-->

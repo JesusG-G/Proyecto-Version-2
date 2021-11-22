@@ -6,7 +6,10 @@ import { CRUDService } from '../../services/crud.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styles:[
+    
+  ]
 })
 export class LoginComponent implements OnInit {
   

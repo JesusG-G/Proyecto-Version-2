@@ -1,4 +1,5 @@
-<div class="container-fluid position-relative animate__animated animate__fadeIn">
+<div class="fondo">
+<div class="container-fluid position-relative animate__animated animate__fadeIn ">
     <form [formGroup]="formularioRegistro" (ngSubmit)="aceptado()"  class="border border-dark text-center rounded-3 shadow-lg formulario">
        <!--enviarDatos(formularioRegistro)-->
         <h3 class="mb-3">Registro de Usuario</h3>
@@ -50,7 +51,8 @@
                 >Las contraseñas no coinciden</span>
        </div>    
        <button type="submit" class="btn btn-danger">Registrar</button>
-       <button routerLink="/auth/login">Inicio de Sesion</button>
+       <button routerLink="/auth/login" class="btn btn-danger">Inicio de Sesion</button>
     </form>
+</div>
 </div>
 

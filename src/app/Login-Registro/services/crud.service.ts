@@ -2,7 +2,7 @@ import { Injectable, Output, EventEmitter } from '@angular/core';
 import {HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import { RegistroUsuario } from './Registro';
+import { RegistroUsuario } from '../Interfaces/Registro';
 
 
 

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LRRoutingModule } from './lrrouting.module';
+import { MaterialModule } from '../material/material.module';
 
 //Componentes
 import { LoginComponent } from './Pages/login/login.component';
@@ -11,17 +12,21 @@ import { MenuComponent } from './Components/menu/menu.component';
 
 
 
+
+
 @NgModule({
   declarations: [
     LoginComponent,
     RegistroComponent,
     MenuComponent
+    
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    LRRoutingModule
+    LRRoutingModule,
+    MaterialModule
   ]
 })
 export class LoginRegistroModule { }
