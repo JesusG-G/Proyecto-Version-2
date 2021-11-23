@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-html,body{
-    margin: 0;
-    padding: 0;
+
+body{
+    margin: 0px;
+    padding: 0px;
 }
 .formulario{
     max-width: 480px; 
@@ -25,10 +26,12 @@ html,body{
     transform: scale(2);
 }
 .fondo{
-    height:100%; background-size:cover; 
-    width:100%;
-     background-image:url('/assets/puerto001.png');
     
+    
+    background-repeat: no-repeat;
+    background-image:url('assets/puerto001.png');
+    background-size: 100%;
+
 
    
   }

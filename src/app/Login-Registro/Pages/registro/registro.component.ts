@@ -42,6 +42,7 @@ export class RegistroComponent implements OnInit {
 
    aceptado(){
      this.aprobar=true;
+     console.log(this.formularioRegistro)
      if(this.formularioRegistro.valid){
        alert('Exito');
        this.enviarDatos(this.formularioRegistro);
