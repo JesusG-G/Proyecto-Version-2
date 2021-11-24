@@ -2,7 +2,7 @@
 <mat-sidenav-container fullscreen>
     <mat-sidenav #sidenav mode="push" hasbackdrop="true">
         
-        <mat-toolbar>
+        <mat-toolbar color="warn">
             <span>Menú</span>
             <span class="spacer"></span>
             <button mat-icon-button (click)="sidenav.toggle()">
@@ -78,12 +78,13 @@
            
         </mat-nav-list>
     </mat-sidenav>
-    <mat-toolbar>
+    <mat-toolbar color="warn">
         <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
         </button>
+        <button mat-button routerLink="./Inicio"><img class="imagen" src="./assets/1Ssemat.png" alt="Logo Semat"></button>
         <span class="spacer"></span>
-        <button mat-button>
+        <button mat-button (click)="logout()">
             Cerrar Sesión
         </button>
     </mat-toolbar>

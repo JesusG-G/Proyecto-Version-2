@@ -1,5 +1,5 @@
-<div class="container">
-    <mat-card class="border border-dark text-center rounded-3 shadow-lg formulario">
+
+    <mat-card >
         <mat-card-header class="justify-content-center" >
             <mat-card-title>Registro de Usuario</mat-card-title>
             <mat-card-subtitle>
@@ -11,23 +11,23 @@
 
         <mat-card-content class="espaciadoMatContent">
             <form [formGroup]="formularioRegistro" (ngSubmit)="aceptado()" >
+                <div>
+                    <mat-form-field appearance="outline" class="max-width">
+                        <mat-label>Nombres</mat-label>
+                        <input matInput type="text" formControlName="Nombres" name="Nombres" id="Nombres"  placeholder="Nombres" required autofocus autocomplete="off">
+                        <span class="text-danger" 
+                        *ngIf="(controlFormularioRegistro.Nombres.touched||aprobar) && controlFormularioRegistro.Nombres.errors?.required "
+                        >Los Nombres son requeridos</span>
+                    </mat-form-field>
 
-                <mat-form-field appearance="outline" class="max-width">
-                    <mat-label>Nombres</mat-label>
-                    <input matInput type="text" formControlName="Nombres" name="Nombres" id="Nombres"  placeholder="Nombres" required autofocus autocomplete="off">
-                    <span class="text-danger" 
-                    *ngIf="(controlFormularioRegistro.Nombres.touched||aprobar) && controlFormularioRegistro.Nombres.errors?.required "
-                    >Los Nombres son requeridos</span>
-                </mat-form-field>
-
-                <mat-form-field appearance="outline" class="max-width">
-                    <mat-label>Apellidos</mat-label>
-                    <input matInput type="text" formControlName="Apellidos" name="Apellidos" id="Apellidos"  placeholder="Apellidos" required autofocus autocomplete="off">
-                    <span class="text-danger" 
-                    *ngIf="(controlFormularioRegistro.Apellidos.touched||aprobar) && controlFormularioRegistro.Apellidos.errors?.required "
-                    >Los Apellidos son requeridos</span>
-                </mat-form-field>
-
+                    <mat-form-field appearance="outline" class="max-width">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput type="text" formControlName="Apellidos" name="Apellidos" id="Apellidos"  placeholder="Apellidos" required autofocus autocomplete="off">
+                        <span class="text-danger" 
+                        *ngIf="(controlFormularioRegistro.Apellidos.touched||aprobar) && controlFormularioRegistro.Apellidos.errors?.required "
+                        >Los Apellidos son requeridos</span>
+                    </mat-form-field>
+                </div>
                 <mat-form-field appearance="outline" class="max-width">
                     <mat-label>Cédula</mat-label>
                     <input matInput type="text" formControlName="CI" name="CI" id="CI"  placeholder="Cédula" required autofocus autocomplete="off">
@@ -72,7 +72,7 @@
         </mat-card-content>
         
     </mat-card>
-</div>
+
 <!--
 <div class="fondo">
 <div class="container-fluid position-relative animate__animated animate__fadeIn ">

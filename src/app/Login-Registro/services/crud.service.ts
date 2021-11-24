@@ -14,7 +14,7 @@ import { RegistroUsuario } from '../Interfaces/Registro';
 export class CRUDService {
 
   API:string='http://localhost/Proyecto-Trabajo-Grado-Refactorizado/PHP'
-  @Output() nombreInicioSesion: EventEmitter<any>=new EventEmitter;
+  @Output() cedulaInicioSesion: EventEmitter<any>=new EventEmitter;
   constructor(private clienteHttp:HttpClient) { }
 
   public AgregarRegistro(Nombres:string,Apellidos:string,CI:string,contrasena:string):Observable<any>{
@@ -25,9 +25,10 @@ export class CRUDService {
 
   public InicioSesion(CI:string,contrasena:string):Observable<any>{
     console.log(CI,contrasena);
-    return this.clienteHttp.post<any>(this.API+'/login.php',{CI,contrasena}).pipe(map(RegistroUsuario=>{
-      //this.setToken(RegistroUsuario[0].Nombres);
-      //this.nombreInicioSesion.emit(true);
+    return this.clienteHttp.post<any>(this.API+'/login.php',{CI,contrasena})
+      .pipe(map(RegistroUsuario=>{
+        this.setToken(RegistroUsuario[0].CI);
+        this.cedulaInicioSesion.emit(true);
       return RegistroUsuario;}));
       
     }

@@ -1,11 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-body{
-    margin: 0px;
-    padding: 0px;
-}
+
 .formulario{
-    max-width: 480px; 
+    max-width: 600px; 
     margin: auto;
     padding: 20px 30px;
     margin-top: 50px;
@@ -25,18 +22,20 @@ body{
 .icono-display{
     transform: scale(2);
 }
-.fondo{
-    
-    
-    background-repeat: no-repeat;
-    background-image:url('assets/puerto001.png');
-    background-size: 100%;
-
-
-   
-  }
+.background{
+    background-color: crimson;
+}
 .spacer {
     flex: 1 1 auto;
 }
+.justificado{
+    display: flex;
+    justify-content: center;
+    
+}
+.imagen{
+    width:100px;
+    height: auto;
+}
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; padding: 0;}

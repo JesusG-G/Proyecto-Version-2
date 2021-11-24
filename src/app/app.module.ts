@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { MaterialModule } from './material/material.module';
     SharedModule,
     LoginRegistroModule,
     UsuarioModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

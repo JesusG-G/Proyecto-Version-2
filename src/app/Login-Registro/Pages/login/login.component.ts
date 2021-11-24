@@ -53,9 +53,7 @@ export class LoginComponent implements OnInit {
         .subscribe(
             data=>{
               alert("Felicidades");
-              this.router.navigate(['usuario']);
-              //const redirigir= this.crudService.redirectUrl ? this.crudService.redirectUrl : '/dashboard';
-              /*this.router.navigate([/*redirigir])*/},
+              this.router.navigate(['usuario']);},
               error=>{
                 alert("Cedula o contraseña incorrecta")
                 
