@@ -1,41 +1,52 @@
-<div>
-        <mat-card color="warn">
-            <mat-card-header class="justify-content-center" >
-                <mat-card-title>Inicio de Sesión</mat-card-title>
-                <mat-card-subtitle>
+
+<div fxLayout="column" class="mat-card">
+        <div class="justificado logo" >
+            <img  src="assets/1Ssemat.png" alt="Logo Semat"  >
+        </div>
+        <br>
+        <div class="contenedor">
+                <div >
+                    <h1>Inicio de Sesión</h1>
                     <mat-icon class="icono-display espaciadoMatContent">account_circle</mat-icon>
-                </mat-card-subtitle>
-                
-            </mat-card-header>
-            <mat-divider></mat-divider>
-            <mat-card-content class="espaciadoMatContent">
-                <form [formGroup]="loginDatos" (ngSubmit)="aceptado()" >
-                    <mat-form-field appearance="outline" class="max-width">
-                        <mat-label>Cédula</mat-label>
-                        <input matInput type="text" formControlName="CI" name="CI" id="CI"  placeholder="Cédula" required autofocus autocomplete="off">
-                        <span class="text-danger" 
-                            *ngIf="(controlFormularioRegistro.CI.touched||aprobar) && controlFormularioRegistro.CI.errors?.required "
-                            >La cédula es requerida</span>
-                    </mat-form-field>
+                </div>
 
-                    
+                <mat-divider></mat-divider>
 
-                    <mat-form-field appearance="outline" class="max-width">
-                        <mat-label>Contraseña</mat-label>
-                        <input matInput type="password" formControlName="contrasena" name="Contrasena" id="contrasena" placeholder="Contraseña" required autofocus autocomplete="off">
-                        <span class="text-danger" 
-                            *ngIf="(controlFormularioRegistro.contrasena.touched||aprobar) && controlFormularioRegistro.contrasena.errors?.required "
-                            >La contraseña es requerida</span>
-                    </mat-form-field>
-                    <mat-card-actions>
-                        <button mat-raised-button color="warm" type="submit" class="btn btn-danger">Ingresar</button>
-                        <button mat-raised-button color="warm" routerLink="/auth/registro" class="btn btn-danger">Registro</button> 
-                    </mat-card-actions>
-                    </form>
-            </mat-card-content>
-            
-        </mat-card>
+                <div class="formulario" >
+                    <form [formGroup]="loginDatos" (ngSubmit)="aceptado()" >
+                        <div>
+                        <mat-form-field appearance="outline" class="max-width">
+                            <mat-label>Cédula</mat-label>
+                            <input matInput type="text" formControlName="CI" name="CI" id="CI"  placeholder="Cédula" required autofocus autocomplete="off">
+                            <span class="text-danger" 
+                                *ngIf="(controlFormularioRegistro.CI.touched||aprobar) && controlFormularioRegistro.CI.errors?.required "
+                                >La cédula es requerida</span>
+                        </mat-form-field>
 
+                        <mat-form-field appearance="outline" class="max-width">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text' " formControlName="contrasena" name="Contrasena" id="contrasena" placeholder="Contraseña" required autofocus autocomplete="off">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" >
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </button>
+                            <span class="text-danger" 
+                                *ngIf="(controlFormularioRegistro.contrasena.touched||aprobar) && controlFormularioRegistro.contrasena.errors?.required "
+                                >La contraseña es requerida</span>
+                        </mat-form-field>
+
+                        </div>
+
+                        <div fxLayout="row">
+                            <button mat-raised-button color="warn" type="submit" class="btn btn-danger">Ingresar</button>
+                            <span class="spacer"></span>
+                            <button mat-raised-button color="warn" routerLink="/auth/registro" class="btn btn-danger">Registro</button> 
+                        </div>
+                        </form>
+                </div>
+
+        </div>
+</div>
+        
 <!--
 <div class="container animate__animated animate__fadeIn">
 

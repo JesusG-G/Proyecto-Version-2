@@ -1,29 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-.formulario{
-    max-width: 600px; 
-    margin: auto;
-    padding: 20px 30px;
-    margin-top: 50px;
+.mat-card{
+    
+    text-align: center;
+    background-color: white;
+    height: 100%;
+   
 }
 
-.menuLogin{
-    max-width: 480px;
-    margin-bottom: 0px;
-    margin:auto;
+.contenedor{
+    margin-top: 15px;
+    height: fit-content;
+}
+.formulario{
+    margin: auto;
+    padding: 15px;
+    
 }
 .max-width{
     width: 100%;
 }
 .espaciadoMatContent{
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .icono-display{
     transform: scale(2);
 }
 .background{
     background-color: crimson;
+    height: 100%;
 }
 .spacer {
     flex: 1 1 auto;
@@ -33,9 +40,27 @@
     justify-content: center;
     
 }
+.logo{
+    box-shadow: 0px 17px 24px -5px rgba(0,0,0,0.56);
+    -webkit-box-shadow: 0px 17px 24px -5px rgba(0,0,0,0.56);
+    -moz-box-shadow: 0px 17px 24px -5px rgba(0,0,0,0.56);
+    background-color: crimson;
+    padding: 10px;
+    margin: 0;
+}
+.imagen-Semat-Puerto{
+    height: 100%;
+    width: 100%;
+    box-shadow: -10px 4px 24px -5px rgba(0,0,0,0.56);
+    -webkit-box-shadow: -10px 4px 24px -5px rgba(0,0,0,0.56);
+    -moz-box-shadow: -10px 4px 24px -5px rgba(0,0,0,0.56);
+}
+
+.botones{
+    margin: 20px;
+}
 .imagen{
-    width:100px;
-    height: auto;
+    width: 100px;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; padding: 0;}

@@ -1,77 +1,92 @@
+<div fxLayout="column" class="mat-card">
+    <div class="justificado logo" >
+        <img  src="assets/1Ssemat.png" alt="Logo Semat"  >
+    </div>
+    <br>
+    <div class="contenedor">
+            <div >
+                <h1>Inicio de Sesión</h1>
+                <mat-icon class="icono-display espaciadoMatContent">account_circle</mat-icon>
+            </div>
 
-    <mat-card >
-        <mat-card-header class="justify-content-center" >
-            <mat-card-title>Registro de Usuario</mat-card-title>
-            <mat-card-subtitle>
-                <mat-icon class="icono-display espaciadoMatContent">app_registration</mat-icon>
-            </mat-card-subtitle>
-        </mat-card-header>
+            <mat-divider></mat-divider>
+            <div class="formulario">
+                <form [formGroup]="formularioRegistro" (ngSubmit)="aceptado()" >
+                    <div fxLayout="row">
+                        <div fxFlex="50">
+                            <mat-form-field appearance="outline" class="max-width">
+                                <mat-label>Nombres</mat-label>
+                                <input matInput type="text" formControlName="Nombres" name="Nombres" id="Nombres"  placeholder="Nombres" required autofocus autocomplete="off">
+                                <span class="text-danger" 
+                                *ngIf="(controlFormularioRegistro.Nombres.touched||aprobar) && controlFormularioRegistro.Nombres.errors?.required "
+                                >Los Nombres son requeridos</span>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="50">
+                            <mat-form-field appearance="outline" class="max-width">
+                                <mat-label>Apellidos</mat-label>
+                                <input matInput type="text" formControlName="Apellidos" name="Apellidos" id="Apellidos"  placeholder="Apellidos" required autofocus autocomplete="off">
+                                <span class="text-danger" 
+                                *ngIf="(controlFormularioRegistro.Apellidos.touched||aprobar) && controlFormularioRegistro.Apellidos.errors?.required "
+                                >Los Apellidos son requeridos</span>
+                            </mat-form-field>
+                        </div>
+                    </div>
 
-        <mat-divider></mat-divider>
-
-        <mat-card-content class="espaciadoMatContent">
-            <form [formGroup]="formularioRegistro" (ngSubmit)="aceptado()" >
-                <div>
                     <mat-form-field appearance="outline" class="max-width">
-                        <mat-label>Nombres</mat-label>
-                        <input matInput type="text" formControlName="Nombres" name="Nombres" id="Nombres"  placeholder="Nombres" required autofocus autocomplete="off">
+                        <mat-label>Cédula</mat-label>
+                        <input matInput type="text" formControlName="CI" name="CI" id="CI"  placeholder="Cédula" required autofocus autocomplete="off">
                         <span class="text-danger" 
-                        *ngIf="(controlFormularioRegistro.Nombres.touched||aprobar) && controlFormularioRegistro.Nombres.errors?.required "
-                        >Los Nombres son requeridos</span>
+                        *ngIf="(controlFormularioRegistro.CI.touched||aprobar) && controlFormularioRegistro.CI.errors?.required "
+                        >La cédula es requerida</span>
                     </mat-form-field>
 
-                    <mat-form-field appearance="outline" class="max-width">
-                        <mat-label>Apellidos</mat-label>
-                        <input matInput type="text" formControlName="Apellidos" name="Apellidos" id="Apellidos"  placeholder="Apellidos" required autofocus autocomplete="off">
-                        <span class="text-danger" 
-                        *ngIf="(controlFormularioRegistro.Apellidos.touched||aprobar) && controlFormularioRegistro.Apellidos.errors?.required "
-                        >Los Apellidos son requeridos</span>
-                    </mat-form-field>
-                </div>
-                <mat-form-field appearance="outline" class="max-width">
-                    <mat-label>Cédula</mat-label>
-                    <input matInput type="text" formControlName="CI" name="CI" id="CI"  placeholder="Cédula" required autofocus autocomplete="off">
-                    <span class="text-danger" 
-                    *ngIf="(controlFormularioRegistro.CI.touched||aprobar) && controlFormularioRegistro.CI.errors?.required "
-                    >La cédula es requerida</span>
-                </mat-form-field>
+                    <div fxLayout="row">
+                        <div fxFlex="50">
+                            <mat-form-field appearance="outline" class="max-width">
+                                <mat-label>Contraseña</mat-label>
+                                <input matInput [type]="hide ? 'password':'text'" formControlName="contrasena" name="Contraseña" id="contraseña"  placeholder="Contraseña" required autofocus autocomplete="off">
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                  </button>
+                                <span class="text-danger" 
+                                *ngIf="(controlFormularioRegistro.contrasena.touched||aprobar) && controlFormularioRegistro.contrasena.errors?.required "
+                                >La contraseña es requerida</span>
+                            <span class="text-danger" 
+                                *ngIf="controlFormularioRegistro.contrasena.touched && controlFormularioRegistro.contrasena.errors?.contrasenaInvalida "
+                                >La contraseña debe de tener:
+                                <ul>
+                                    <li>Minimo 8 caracteres</li>
+                                    <li>Al menos una letra mayuscula</li>
+                                    <li>Al menos una letra minuscula</li>
+                                    <li>Al menos un numero</li>
+                                </ul></span>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="50">
+                            <mat-form-field appearance="outline" class="max-width">
+                                <mat-label>Confirmar Contraseña</mat-label>
+                                <input matInput type="password" formControlName="confirContrasena" name="contrasenaconfir" id="contrasenaconfir"  placeholder="Confirmar Contraseña" required autofocus autocomplete="off">
+                                <span class="text-danger" 
+                                *ngIf="(controlFormularioRegistro.confirContrasena.touched||aprobar) && controlFormularioRegistro.confirContrasena.errors?.required "
+                                >La confirmacion de la contraseña es requerida</span>
+                                <span class="text-danger" 
+                                *ngIf="controlFormularioRegistro.confirContrasena.touched && controlFormularioRegistro.confirContrasena.errors?.passwordMismatch"
+                                >Las contraseñas no coinciden</span>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="row">
+                        <button mat-raised-button color="warn" type="submit" >Registrar</button>
+                        <span class="spacer"></span>
+                        <button mat-raised-button color="warn" routerLink="/auth/login" >Inicio de Sesión</button> 
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
 
-                <mat-form-field appearance="outline" class="max-width">
-                    <mat-label>Contraseña</mat-label>
-                    <input matInput type="password" formControlName="contrasena" name="Contraseña" id="contraseña"  placeholder="Contraseña" required autofocus autocomplete="off">
-                    <span class="text-danger" 
-                    *ngIf="(controlFormularioRegistro.contrasena.touched||aprobar) && controlFormularioRegistro.contrasena.errors?.required "
-                    >La contraseña es requerida</span>
-                <span class="text-danger" 
-                    *ngIf="controlFormularioRegistro.contrasena.touched && controlFormularioRegistro.contrasena.errors?.contrasenaInvalida "
-                    >La contraseña debe de tener:
-                    <ul>
-                        <li>Minimo 8 caracteres</li>
-                        <li>Al menos una letra mayuscula</li>
-                        <li>Al menos una letra minuscula</li>
-                        <li>Al menos un numero</li>
-                    </ul></span>
-                </mat-form-field>
-
-                <mat-form-field appearance="outline" class="max-width">
-                    <mat-label>Confirmar Contraseña</mat-label>
-                    <input matInput type="password" formControlName="confirContrasena" name="contrasenaconfir" id="contrasenaconfir"  placeholder="Confirmar Contraseña" required autofocus autocomplete="off">
-                    <span class="text-danger" 
-                    *ngIf="(controlFormularioRegistro.confirContrasena.touched||aprobar) && controlFormularioRegistro.confirContrasena.errors?.required "
-                    >La confirmacion de la contraseña es requerida</span>
-                    <span class="text-danger" 
-                    *ngIf="controlFormularioRegistro.confirContrasena.touched && controlFormularioRegistro.confirContrasena.errors?.passwordMismatch"
-                    >Las contraseñas no coinciden</span>
-                </mat-form-field>
-                
-                <mat-card-actions>
-                    <button mat-raised-button color="warm" type="submit" class="btn btn-danger">Registrar</button>
-                    <button mat-raised-button color="warm" routerLink="/auth/login" class="btn btn-danger">Inicio de Sesión</button> 
-                </mat-card-actions>
-            </form>
-        </mat-card-content>
-        
-    </mat-card>
+    
 
 <!--
 <div class="fondo">

@@ -3,32 +3,15 @@
 <div fxLayout="row"  class="background">
     
         <div fxFlex="50" >
-            <nav mat-tab-nav-bar >
-                <a mat-tab-link 
-                    routerLink="/auth/login"
-                    (click)="linkActivo=links[0]"
-                    [active]="linkActivo==links[0]"
-                   > 
-                    Inicio de Sesión
-                </a>
-                <a mat-tab-link 
-                    routerLink="/auth/registro"
-                    (click)="linkActivo=links[1]"
-                    [active]="linkActivo==links[1]">
-                    Registro
-                </a>
-            </nav>
             
-            <div class=" justificado espaciadoMatContent">
-                <img src="assets/1Ssemat.png" alt="Logo Semat"  >
-            </div>
-            <div class="espaciadoMatContent">
-                <router-outlet ></router-outlet>
-            </div>    
+            <router-outlet ></router-outlet>      
         </div>
+
         <div fxFlex="50">
-            <img src="assets/puerto001.png" alt="">
+            <img class="imagen-Semat-Puerto" src="assets/puerto001.png" alt="">
         </div>
+
+        
 </div>
  <!--class="formulario border border-dark text-center rounded-3 shadow-lg "-->
       

@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormGroup,ValidatorFn,AbstractControl} from '@angular/forms';
+import { RegistroUsuario } from '../Interfaces/Registro';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ValidadorService {
+
+
 
   //Utilizado para validar las contraseñas
   Validaciondepatrones():ValidatorFn{

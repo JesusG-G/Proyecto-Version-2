@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { CRUDService } from '../../services/crud.service';
 import { ValidadorService } from '../../services/validador.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -16,11 +17,13 @@ export class LoginComponent implements OnInit {
   
   loginDatos!:FormGroup;
   aprobar:boolean=true;
+  hide:boolean=true;
 
   constructor(public formulario:FormBuilder,
               private crudService:CRUDService,
               private router:Router,
-              private validador:ValidadorService) {
+              private validador:ValidadorService,
+              private _snackbar: MatSnackBar) {
       
     
   }
@@ -38,12 +41,17 @@ export class LoginComponent implements OnInit {
   get controlFormularioRegistro(){
     return this.loginDatos.controls;
   }
-
+  abrirSnackBar(mensaje:string, accion:string){
+    this._snackbar.open(mensaje, accion);
+  }
   aceptado(){
-    this.aprobar=true;
+   
     if(this.loginDatos.valid){
-      alert("Bienvenido");
+      this.abrirSnackBar(`Bienvenido`,'Cerrar');
       this.inicioSesion(this.loginDatos);
+    }
+    else{
+      this.abrirSnackBar(`Cédula o Contraseña invalida`,'Cerrar');
     }
   }
 
@@ -52,12 +60,7 @@ export class LoginComponent implements OnInit {
     .pipe(first())
         .subscribe(
             data=>{
-              alert("Felicidades");
-              this.router.navigate(['usuario']);},
-              error=>{
-                alert("Cedula o contraseña incorrecta")
-                
-              }
+              this.router.navigate(['usuario']);}
         );
     }
 
