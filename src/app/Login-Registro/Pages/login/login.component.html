@@ -26,7 +26,7 @@
                         <mat-form-field appearance="outline" class="max-width">
                             <mat-label>Contraseña</mat-label>
                             <input matInput [type]="hide ? 'password' : 'text' " formControlName="contrasena" name="Contrasena" id="contrasena" placeholder="Contraseña" required autofocus autocomplete="off">
-                            <button mat-icon-button matSuffix (click)="hide = !hide" >
+                            <button mat-icon-button type="button" matSuffix (click)="hide = !hide" >
                                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                               </button>
                             <span class="text-danger" 

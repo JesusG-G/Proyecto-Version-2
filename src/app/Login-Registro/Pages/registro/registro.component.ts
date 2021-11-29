@@ -61,7 +61,9 @@ export class RegistroComponent implements OnInit {
    enviarDatos(formularioRegistro:FormGroup){
     console.log(formularioRegistro.value);
     this.crudService.AgregarRegistro(formularioRegistro.value.Nombres,formularioRegistro.value.Apellidos,
-      formularioRegistro.value.CI,formularioRegistro.value.contrasena).pipe(first()).subscribe(data=>this.router.navigate(['auth/login'])
+      formularioRegistro.value.CI,formularioRegistro.value.contrasena)
+      .pipe(first())
+        .subscribe(data=>this.router.navigate(['auth/login'])
         )}
 
     get Nombres() { return this.formularioRegistro.get('Nombres'); }

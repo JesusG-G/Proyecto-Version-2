@@ -1,0 +1,133 @@
+<div fxLayout="row">
+    <div class="contenedor mat-card" fxFlex="80">
+        <div >
+            <h1>Tramite de:<small> </small></h1>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="formulario">
+        <form [formGroup]="solicitud" (ngSubmit)="prueba()">
+            <!--Primero select de solicitudes-->
+            <h3>Tipo de Solicitud</h3>
+            <mat-divider></mat-divider>
+            <mat-form-field >
+                <mat-label>Solicitud</mat-label>
+                <mat-select formControlName="tipoSolicitud" 
+                            name="tipoSolicitud">
+              <!--Ngfor con los nombres de las solicitudes-->    
+                    <mat-option [value]="tipo.value" 
+                    *ngFor="let tipo of tiposSolicitud; let i=index" 
+                    required>{{tipo.tipo}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+           <!-- <h3>Solicitante</h3>
+            <mat-divider></mat-divider>
+            <mat-form-field appearance="outline" class="max-width">
+                <mat-label>Solicitante</mat-label>
+                <input matInput type="text" 
+                       formControlName="RIF" 
+                       name="RIF" id="RIF"  
+                       placeholder="RIF" 
+                       required 
+                       autofocus 
+                       autocomplete="off">
+                <span class="text-danger" 
+                    >El RIF es requerida</span>
+            </mat-form-field>
+            -->
+            <!--Datos de la empresa-->
+            <!--EMpresa-->
+            <h3>Datos de la Empresa</h3>
+            <mat-divider></mat-divider>
+            <mat-form-field appearance="outline" class="max-width">
+                <mat-label>Nombre de la Empresa</mat-label>
+                <input matInput type="text" 
+                       formControlName="empresa" 
+                       name="empresa" id="empresa"  
+                       placeholder="Empresa" 
+                       required 
+                       autofocus 
+                       autocomplete="off">
+                <span class="text-danger" 
+                    >El Nombre de la Empresa es requerida</span>
+            </mat-form-field>
+            <div fxLayout="row">
+            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                <mat-label>RIF</mat-label>
+                <input matInput type="text" 
+                       formControlName="RIF" 
+                       name="RIF" id="RIF"  
+                       placeholder="RIF" 
+                       required 
+                       autofocus 
+                       autocomplete="off">
+                <span class="text-danger" 
+                    >El RIF es requerida</span>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                <mat-label>Telefono</mat-label>
+                <input matInput type="text" 
+                       formControlName="telf" 
+                       name="telf" id="telf"  
+                       placeholder="Telefono" 
+                       required 
+                       autofocus 
+                       autocomplete="off">
+                <span class="text-danger" 
+                    >El Telefono es requerida</span>
+            </mat-form-field>
+        </div>
+            <h3>Direccion</h3>
+            <mat-divider></mat-divider>
+            <mat-form-field appearance="outline" class="max-width">
+                <mat-label>Urbanización</mat-label>
+                <input matInput type="text" 
+                       formControlName="urb" 
+                       name="urb" id="urb"  
+                       placeholder="Urbanización" 
+                       required 
+                       autofocus 
+                       autocomplete="off">
+                <span class="text-danger" 
+                    >La Urbanización es requerida</span>
+            </mat-form-field>
+            <div fxLayout="row">
+                    <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                        <mat-label>Calle</mat-label>
+                        <input matInput type="text" 
+                            formControlName="calle" 
+                            name="calle" id="calle"  
+                            placeholder="Calle" 
+                            required 
+                            autofocus 
+                            autocomplete="off">
+                        <span class="text-danger" 
+                            >La Calle es requerida</span>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                        <mat-label>Casa/Local/Edificio</mat-label>
+                        <input matInput type="text" 
+                            formControlName="caloed" 
+                            name="caloed" id="caloed"  
+                            placeholder="Casa/Local/Edificio" 
+                            required 
+                            autofocus 
+                            autocomplete="off">
+                        <span class="text-danger" 
+                            >La Calle es requerida</span>
+                    </mat-form-field>
+            </div>
+            
+            
+            <div fxLayout="row">
+                <button mat-raised-button color="warn" type="submit" class="btn btn-danger">Enviar</button>
+                <span class="spacer"></span>
+                <button mat-raised-button color="warn" type="button" (click)="LimpiarFormulario()" class="btn btn-danger">Limpiar</button> 
+            </div>
+        
+        </form>
+
+        </div>
+
+    </div>
+</div>

@@ -62,6 +62,7 @@ export class LoginComponent implements OnInit {
             data=>{
               this.router.navigate(['usuario']);}
         );
+      
     }
 
     get CI() { return this.loginDatos.get('CI'); }

@@ -13,6 +13,10 @@ const routes:Routes=[
     loadChildren:()=> import('./usuario/usuario.module').then(m=>m.UsuarioModule)
   },
   {
+    path:'admin',
+    loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule)
+  },
+  {
     path:'404',
     component:ErrorPageComponent
   },
