@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Solicitud, Tramite } from '../../Interfaces/tramite';
+import { solicitante, Solicitud, Tramite } from '../../Interfaces/tramite';
 import { TramiteService } from '../../services/tramite.service';
 
 
@@ -10,6 +10,13 @@ import { TramiteService } from '../../services/tramite.service';
   selector: 'app-tramite',
   templateUrl: './tramite.component.html',
   styles: [
+    `mat-form-field{
+      margin: 10px;
+      
+    }
+    
+   
+    `
   ]
 })
 export class TramiteComponent implements OnInit {
@@ -17,6 +24,7 @@ export class TramiteComponent implements OnInit {
   tramite!:Tramite;
   solicitud!:FormGroup;
   datosStorage =JSON.parse(localStorage.getItem('token')!);
+  solicitante!:solicitante;
   fecha:Date=new Date();
   dia:number=this.fecha.getDate();
   mes:number=this.fecha.getMonth()+1;
@@ -75,22 +83,39 @@ export class TramiteComponent implements OnInit {
     this.solicitud=this.formulario.group(
       {
         tipoSolicitud:['',[Validators.required]],
-        empresa:['',[Validators.required,Validators.minLength(1)]],
-        RIF:['',[Validators.required,Validators.minLength(1)]],
-        telf:['',[Validators.required,Validators.minLength(1)]],
-        urb:['',[Validators.required,Validators.minLength(1)]],
+        empresa:['',[Validators.required,Validators.minLength(3)]],
+        RIF:['',[Validators.required,Validators.minLength(3)]],
+        telf:['',[Validators.required,Validators.minLength(3)]],
+        urb:['',[Validators.required,Validators.minLength(3)]],
         calle:['',[Validators.required,Validators.minLength(1)]],
-        caloed:['',[Validators.required,Validators.minLength(1)]]
+        caloed:['',[Validators.required,Validators.minLength(3)]]
       }
-    )
+    );
+    this.solicitante={
+        Nombres:this.datosStorage[0].Nombres,
+        Apellidos:this.datosStorage[0].Apellidos,
+        CI:this.datosStorage[0].CI
+    }
   }
-
-  prueba(){
+  campoNoEsValido(campo:string){
+    return this.solicitud.controls[campo].errors 
+          && this.solicitud.controls[campo].touched;
+  }
+  validar(){
     console.log(this.solicitud);
     console.log(this.solicitud.controls.ti);
     console.table(this.solicitud.value);
-    this.enviarSolicitud(this.solicitud)
+    if(this.solicitud.valid){
+      this.abrirSnackBar('Solicitud enviada con Exito','Cerrar');
+    this.enviarSolicitud(this.solicitud);
+  }
+    else{
+      this.abrirSnackBar('Error al enviar la solicitud','Cerrar');
+    }
    
+  }
+  abrirSnackBar(mensaje:string, accion:string){
+    this._snackbar.open(mensaje, accion);
   }
 
   get datosTramite(){

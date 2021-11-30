@@ -1,39 +1,54 @@
 <div fxLayout="row">
-    <div class="contenedor mat-card" fxFlex="80">
+    <div class="contenedor mat-card" fxFlex="100">
         <div >
             <h1>Tramite de:<small> </small></h1>
         </div>
         <mat-divider></mat-divider>
         <div class="formulario">
-        <form [formGroup]="solicitud" (ngSubmit)="prueba()">
+        <form [formGroup]="solicitud" (ngSubmit)="validar()" autocomplete="off">
             <!--Primero select de solicitudes-->
-            <h3>Tipo de Solicitud</h3>
-            <mat-divider></mat-divider>
-            <mat-form-field >
-                <mat-label>Solicitud</mat-label>
-                <mat-select formControlName="tipoSolicitud" 
-                            name="tipoSolicitud">
-              <!--Ngfor con los nombres de las solicitudes-->    
-                    <mat-option [value]="tipo.value" 
-                    *ngFor="let tipo of tiposSolicitud; let i=index" 
-                    required>{{tipo.tipo}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-           <!-- <h3>Solicitante</h3>
-            <mat-divider></mat-divider>
-            <mat-form-field appearance="outline" class="max-width">
-                <mat-label>Solicitante</mat-label>
-                <input matInput type="text" 
-                       formControlName="RIF" 
-                       name="RIF" id="RIF"  
-                       placeholder="RIF" 
-                       required 
-                       autofocus 
-                       autocomplete="off">
-                <span class="text-danger" 
-                    >El RIF es requerida</span>
-            </mat-form-field>
-            -->
+            <div fxLayout="row">
+                <div fxFlex="20">
+                    <h3>Tipo de Solicitud</h3>
+                    <mat-divider></mat-divider>
+                    <mat-form-field >
+                        <mat-label >Solicitud</mat-label>
+                        <mat-select formControlName="tipoSolicitud" 
+                                    name="tipoSolicitud">
+                    <!--Ngfor con los nombres de las solicitudes-->    
+                            <mat-option [value]="tipo.value" 
+                            *ngFor="let tipo of tiposSolicitud; let i=index" 
+                            required>{{tipo.tipo}}</mat-option>
+                        </mat-select>
+                        <span class="text-danger" 
+                    *ngIf="campoNoEsValido('tipoSolicitud')"
+                    >Debe seleccionar un tipo de Solicitud </span>
+                    </mat-form-field>
+                 </div>
+                <div fxFlex="80">
+                 <h3>Datos del Solicitante</h3>
+                    <mat-divider></mat-divider>
+                    <mat-form-field appearance="outline" class="max-width">
+                        <mat-label>Cedula</mat-label>
+                        <input matInput type="text" 
+                        [value]="solicitante.CI"
+                            disabled>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="max-width">
+                        <mat-label>Nombres</mat-label>
+                        <input matInput type="text" 
+                               [value]="solicitante.Nombres"
+                               disabled>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="max-width">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput type="text" 
+                               [value]="solicitante.Apellidos"
+                               disabled>
+                    </mat-form-field>
+                  
+                </div>
+            </div>
             <!--Datos de la empresa-->
             <!--EMpresa-->
             <h3>Datos de la Empresa</h3>
@@ -42,12 +57,12 @@
                 <mat-label>Nombre de la Empresa</mat-label>
                 <input matInput type="text" 
                        formControlName="empresa" 
-                       name="empresa" id="empresa"  
+                       id="empresa"  
                        placeholder="Empresa" 
                        required 
-                       autofocus 
-                       autocomplete="off">
+                       autofocus>
                 <span class="text-danger" 
+                    *ngIf="campoNoEsValido('empresa')"
                     >El Nombre de la Empresa es requerida</span>
             </mat-form-field>
             <div fxLayout="row">
@@ -55,12 +70,12 @@
                 <mat-label>RIF</mat-label>
                 <input matInput type="text" 
                        formControlName="RIF" 
-                       name="RIF" id="RIF"  
+                       id="RIF"  
                        placeholder="RIF" 
                        required 
-                       autofocus 
-                       autocomplete="off">
+                       autofocus>
                 <span class="text-danger" 
+                *ngIf="campoNoEsValido('RIF')"
                     >El RIF es requerida</span>
             </mat-form-field>
 
@@ -68,12 +83,12 @@
                 <mat-label>Telefono</mat-label>
                 <input matInput type="text" 
                        formControlName="telf" 
-                       name="telf" id="telf"  
+                       id="telf"  
                        placeholder="Telefono" 
                        required 
-                       autofocus 
-                       autocomplete="off">
+                       autofocus>
                 <span class="text-danger" 
+                *ngIf="campoNoEsValido('telf')"
                     >El Telefono es requerida</span>
             </mat-form-field>
         </div>
@@ -83,12 +98,12 @@
                 <mat-label>Urbanización</mat-label>
                 <input matInput type="text" 
                        formControlName="urb" 
-                       name="urb" id="urb"  
+                       id="urb"  
                        placeholder="Urbanización" 
                        required 
-                       autofocus 
-                       autocomplete="off">
-                <span class="text-danger" 
+                       autofocus >
+                <span class="text-danger"
+                *ngIf="campoNoEsValido('urb')"
                     >La Urbanización es requerida</span>
             </mat-form-field>
             <div fxLayout="row">
@@ -96,12 +111,12 @@
                         <mat-label>Calle</mat-label>
                         <input matInput type="text" 
                             formControlName="calle" 
-                            name="calle" id="calle"  
+                            id="calle"  
                             placeholder="Calle" 
                             required 
-                            autofocus 
-                            autocomplete="off">
+                            autofocus>
                         <span class="text-danger" 
+                        *ngIf="campoNoEsValido('calle')"
                             >La Calle es requerida</span>
                     </mat-form-field>
                     <mat-form-field appearance="outline" class="max-width" fxFlex="50">
@@ -111,16 +126,19 @@
                             name="caloed" id="caloed"  
                             placeholder="Casa/Local/Edificio" 
                             required 
-                            autofocus 
-                            autocomplete="off">
+                            autofocus>
                         <span class="text-danger" 
+                        *ngIf="campoNoEsValido('caloed')"
                             >La Calle es requerida</span>
                     </mat-form-field>
             </div>
             
             
             <div fxLayout="row">
-                <button mat-raised-button color="warn" type="submit" class="btn btn-danger">Enviar</button>
+                <button mat-raised-button color="warn" 
+                        type="submit" 
+                        class="btn btn-danger"
+                        [disabled]="solicitud.invalid">Enviar</button>
                 <span class="spacer"></span>
                 <button mat-raised-button color="warn" type="button" (click)="LimpiarFormulario()" class="btn btn-danger">Limpiar</button> 
             </div>

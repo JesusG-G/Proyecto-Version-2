@@ -62,5 +62,15 @@
 .imagen{
     width: 100px;
 }
+.mat-input-element:disabled{
+    color:black
+}
+.mat-form-field-label{
+    color: black;
+    
+}
+.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-label{
+    color:black;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; padding: 0;}
