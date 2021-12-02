@@ -16,4 +16,10 @@ export class TramiteService {
 
     return this.clienteHttp.post<Tramite>(this.API+'/solicitud.php',datos);
   }
+
+  public ObtenerSolicitudes(CI:string):Observable<Tramite[]> {
+   
+    return this.clienteHttp.get<Tramite[]>(`${this.API}/consultaIndividual.php?CI=`+CI);
+  }
 }
+

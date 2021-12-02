@@ -97,10 +97,12 @@ export class TramiteComponent implements OnInit {
         CI:this.datosStorage[0].CI
     }
   }
+  
   campoNoEsValido(campo:string){
     return this.solicitud.controls[campo].errors 
           && this.solicitud.controls[campo].touched;
   }
+
   validar(){
     console.log(this.solicitud);
     console.log(this.solicitud.controls.ti);
@@ -153,6 +155,7 @@ export class TramiteComponent implements OnInit {
     
     this.tramiteSolicitud.AgragarSolicitud(this.tramite)
       .subscribe(resp=>console.log('Respuesta',resp));
+      this.solicitud.reset();
  }
 
   LimpiarFormulario(){

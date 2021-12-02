@@ -1,1 +1,19 @@
-<p>consulta works!</p>
+<div class="row">
+    <div>{{solicitudes|json}}</div>
+    <div *ngFor="let dato of solicitudes">
+        <h1>{{dato.solicitante.Nombres}}</h1>
+        <h1>{{dato.solicitante.Apellidos}}</h1>
+        <h1>{{dato.solicitante.CI}}</h1>
+        <h1>{{dato.tipo.value}}</h1>
+        <h1>{{dato.empresa}}</h1>
+        <h1>{{dato.RIF}}</h1>
+        <h1>{{dato.telf}}</h1>
+        <h1>{{dato.direccion.urb}}</h1>
+        <h1>{{dato.direccion.calle}}</h1>
+        <h1>{{dato.direccion.caloed}}</h1>
+        <h1>{{dato.fecha}}</h1>
+
+    </div>
+</div>
+
+
