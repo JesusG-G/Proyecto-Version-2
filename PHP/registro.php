@@ -7,7 +7,8 @@ if(isset($postdata) && !empty($postdata)){
     $Apellidos=  mysqli_real_escape_string($conexionBD,trim($request->Apellidos));
     $CI=  mysqli_real_escape_string($conexionBD,trim($request->CI));
     $contrasena = mysqli_real_escape_string($conexionBD, trim($request->contrasena));
-    $sql = "INSERT INTO `usuarios`( `Nombres`, `Apellidos`, `CI`, `contrasena`) VALUES ('$Nombres','$Apellidos','$CI','$contrasena')";
+    $cargo='usuario';
+    $sql = "INSERT INTO `usuarios`( `Nombres`, `Apellidos`, `CI`, `contrasena`, `cargo`) VALUES ('$Nombres','$Apellidos','$CI','$contrasena','$cargo')";
     if ($conexionBD->query($sql) === TRUE) {
         $authdata = [
             "Nombres" => $Nombres,

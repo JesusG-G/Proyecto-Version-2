@@ -1,0 +1,30 @@
+<h1>Solicitud</h1>
+<div fxLayout="row">
+    <div fxFlex="20">
+    <mat-form-field appearance="fill">
+        <mat-label>Seleccione el tipo d esolicitud:</mat-label>
+        <mat-select [(value)]="seleccion">
+          <mat-option>Seleccione</mat-option>
+          <mat-option value="{{solicitud.value}}" 
+                      *ngFor="let solicitud of tiposSolicitud">
+                      {{solicitud.tipo}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div> 
+      <div fxFlex="80">
+        <app-licaenue *ngIf="seleccion=='LICAENUE'"></app-licaenue>
+        <app-licaanue *ngIf="seleccion=='LICAANUE'"></app-licaanue>
+        <app-renlicaa *ngIf="seleccion=='RENLICAA'"></app-renlicaa>
+        <app-renlicae *ngIf="seleccion=='RENLICAE'"></app-renlicae>
+        <app-extactec *ngIf="seleccion=='EXTACTEC'"></app-extactec>
+        <app-retaceco *ngIf="seleccion=='RETACECO'"></app-retaceco>
+        <app-lictrans *ngIf="seleccion=='LICTRANS'"></app-lictrans>
+        <app-cambdire *ngIf="seleccion=='CAMBDIRE'"></app-cambdire>
+        <app-comdomfi *ngIf="seleccion=='COMDOMFI'"></app-comdomfi>
+        <app-cambdeno *ngIf="seleccion=='CAMBDENO'"></app-cambdeno>
+        <app-solsolve *ngIf="seleccion=='SOLSOLVE'"></app-solsolve>
+        <app-licorenu *ngIf="seleccion=='LICORENU'"></app-licorenu>
+        <app-renlicli *ngIf="seleccion=='RENLICLI'"></app-renlicli>
+        <app-perfunlot *ngIf="seleccion=='PERFUNLOT'"></app-perfunlot>
+      </div>
+</div>  

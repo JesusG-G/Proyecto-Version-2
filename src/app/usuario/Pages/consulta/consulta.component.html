@@ -1,19 +1,52 @@
-<div class="row">
-    <div>{{solicitudes|json}}</div>
-    <div *ngFor="let dato of solicitudes">
-        <h1>{{dato.solicitante.Nombres}}</h1>
-        <h1>{{dato.solicitante.Apellidos}}</h1>
-        <h1>{{dato.solicitante.CI}}</h1>
-        <h1>{{dato.tipo.value}}</h1>
-        <h1>{{dato.empresa}}</h1>
-        <h1>{{dato.RIF}}</h1>
-        <h1>{{dato.telf}}</h1>
-        <h1>{{dato.direccion.urb}}</h1>
-        <h1>{{dato.direccion.calle}}</h1>
-        <h1>{{dato.direccion.caloed}}</h1>
-        <h1>{{dato.fecha}}</h1>
+<div fxLayout="column">
+    <mat-card *ngFor="let dato of solicitudes; let i=index" class="tarjetasSolicitante">
+        <div fxLayout="row" styles="padding:0;">
+            <div fxFlex="20" style="background-color: green; margin: 0 5 0 0;">
 
+            </div>
+            <div fxFlex="80" class="margenesinternos">
+                <mat-card-header>
+                    <mat-card-title>Tipo de Solicitud: {{dato.tipo.value}}</mat-card-title>
+                    <mat-card-subtitle>Fecha de creacion: {{dato.fecha}}</mat-card-subtitle>
+                    <span class="spacer"></span>
+                    <button mat-mini-fab color="warn" 
+                            type="button" 
+                            data-bs-toggle="collapse"
+                            
+                            id=boton_{{i}}>
+                        <mat-icon>expand_more</mat-icon>
+                    </button>
+                </mat-card-header>
+                <mat-card-content  id={{i}} >
+                    <div fxLayout="row">
+                        <div fxFlex="33">
+                            <div fxLayout="column">
+                                <h3><b>Solicitante</b></h3>
+                                <span >Nombres: {{dato.solicitante.Nombres}}</span>
+                                <span >Apellidos: {{dato.solicitante.Apellidos}}</span>
+                                <span >Cedula: {{dato.solicitante.CI}}</span>
+                            </div>
+                        </div>
+                        <div fxFlex="33">
+                            <div fxLayout="column">
+                                <h3><b>Datos Empresa</b></h3>
+                                <span>Nombre: {{dato.empresa}}</span>
+                                <span>RIF: {{dato.RIF}}</span>
+                                <span>Telefono: {{dato.telf}}</span>
+                            </div>
+                        </div>
+                        <div fxFlex="33">
+                            <div fxLayout="column">
+                                <h3><b>Direccion</b></h3>
+                                <span>Urbanizacion: {{dato.direccion.urb}}</span>
+                                <span>Calle: {{dato.direccion.calle}}</span>
+                                <span>Casa/Local/Edificio: {{dato.direccion.caloed}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </div>
     </div>
+    </mat-card>
 </div>
-
 

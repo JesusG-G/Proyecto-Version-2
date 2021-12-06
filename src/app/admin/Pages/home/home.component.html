@@ -15,66 +15,11 @@
                <mat-icon>home</mat-icon>
                Inicio</a>
                <span class="spacer"></span>
-               <!--Boton de Solicitudes-->
-                <button (click)="mostrar=!mostrar" mat-raised-button>
-                    <mat-icon>format_list_bulleted</mat-icon>
-                    Solicitudes
-                </button>
-                <!--Fin del boton de solicitudes-->
-                <!--Solicitudes-->
-                <div *ngIf="mostrar">
-                    <a mat-list-item 
-                        routerLink="./CambioDireccionActividadEconomica" 
-                        (click)="sidenav.toggle(); mostrar=false">
-                        <mat-icon class="espaciado">change_circle</mat-icon>
-                        Cambio de Direccion de Actividad Economica</a>
-                    <a mat-list-item 
-                       routerLink="./ExtencionActividadEconomica" 
-                       (click)="sidenav.toggle(); mostrar=false">
-                       <mat-icon class="espaciado">description</mat-icon>
-                       Extención de Actividad Economica</a>
-                    <a mat-list-item 
-                       routerLink="./ReclasificacionActividadEconomica" 
-                       (click)="sidenav.toggle(); mostrar=false">
-                       <mat-icon class="espaciado">assignment</mat-icon>
-                       Reclasificación de Actividad Economica</a>
-                    <a mat-list-item 
-                       routerLink="./RetiroLicenciaActividadesEconomica" 
-                       (click)="sidenav.toggle(); mostrar=false">
-                       <mat-icon class="espaciado">accessibility</mat-icon>
-                       Retiro de la Licencia de Actividad Economica</a>
-                    <a mat-list-item 
-                       routerLink="./LicenciaActividadesEconomicasTranseunte"
-                       (click)="sidenav.toggle(); mostrar=false">
-                       <mat-icon class="espaciado">sync_alt</mat-icon>
-                       Licencia de Actividad Economica Transeunte</a>
-                    <a mat-list-item 
-                       routerLink="./LicenciaActividadEconomica" 
-                       (click)="sidenav.toggle(); mostrar=false">
-                       <mat-icon class="espaciado">store</mat-icon>
-                       Licencia de Actividad Economica</a>
-                    <a mat-list-item 
-                       routerLink="./PermisoFuncionamiento" 
-                       (click)="sidenav.toggle(); mostrar=false">
-                       <mat-icon class="espaciado">perm_identity</mat-icon>
-                       Otorgar Permiso de Funcionamiento</a>
-                    <a mat-list-item 
-                       routerLink="./RenovacionLicenciaAELicores" 
-                       (click)="sidenav.toggle(); mostrar=false">
-                       <mat-icon class="espaciado">water_drop</mat-icon>
-                       Renovación de la Licencia de Actividad Economica de Licores</a>
-                    <a mat-list-item 
-                       routerLink="./SolvenciaMunicipal" 
-                       (click)="sidenav.toggle(); mostrar=false">
-                       <mat-icon class="espaciado">location_city</mat-icon>
-                       Solvencia Municipal</a>
-                    <a mat-list-item 
-                       routerLink="./DomicilioFiscal"
-                       (click)="sidenav.toggle(); mostrar=false" >
-                       <mat-icon class="espaciado">house</mat-icon>
-                       Domicilio Fiscal</a>
-                </div>    
-                <!--Fin de las Solicitudes-->
+               <a mat-list-item routerLink="./solicitud" 
+               (click)="sidenav.toggle()">
+               <mat-icon>article</mat-icon>
+               Solicitud</a>
+               <span class="spacer"></span>
            
         </mat-nav-list>
     </mat-sidenav>

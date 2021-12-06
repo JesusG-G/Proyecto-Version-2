@@ -1,45 +1,56 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
 //Compoenentes
 import { HomeComponent } from './Pages/home/home.component';
-import { LicenciadeActividadEconomicaComponent } from './Pages/Solicitudes/licenciade-actividad-economica/licenciade-actividad-economica.component';
-import { LicenciadeExpendidodeBebidasAlcoholicasComponent } from './Pages/Solicitudes/licenciade-expendidode-bebidas-alcoholicas/licenciade-expendidode-bebidas-alcoholicas.component';
-import { RenovacionLicenciaActividadesEconomicasLicoresComponent } from './Pages/Solicitudes/renovacion-licencia-actividades-economicas-licores/renovacion-licencia-actividades-economicas-licores.component';
-import { EfectuarExtencionActividadEconomicaComponent } from './Pages/Solicitudes/efectuar-extencion-actividad-economica/efectuar-extencion-actividad-economica.component';
-import { EfectuarReclasificacionActividadEconomicaComponent } from './Pages/Solicitudes/efectuar-reclasificacion-actividad-economica/efectuar-reclasificacion-actividad-economica.component';
-import { LicenciaActividadesEconomicasTranseunteComponent } from './Pages/Solicitudes/licencia-actividades-economicas-transeunte/licencia-actividades-economicas-transeunte.component';
-import { EfectuarRetiroLicenciaActividadesEconomicaComponent } from './Pages/Solicitudes/efectuar-retiro-licencia-actividades-economica/efectuar-retiro-licencia-actividades-economica.component';
-import { TramitarConstanciaDomicilioFiscalComponent } from './Pages/Solicitudes/tramitar-constancia-domicilio-fiscal/tramitar-constancia-domicilio-fiscal.component';
-import { EfectuarCambioDireccionActividadEconomicaComponent } from './Pages/Solicitudes/efectuar-cambio-direccion-actividad-economica/efectuar-cambio-direccion-actividad-economica.component';
-import { OtorgarPermisoFuncionamientoComponent } from './Pages/Solicitudes/otorgar-permiso-funcionamiento/otorgar-permiso-funcionamiento.component';
-import { SolicitarSolvenciaMunicipalComponent } from './Pages/Solicitudes/solicitar-solvencia-municipal/solicitar-solvencia-municipal.component';
+
 import { BienvenidaComponent } from './Pages/bienvenida/bienvenida.component';
+import { SolicitudComponent } from './Pages/solicitud/solicitud.component';
+import { LICAENUEComponent } from './Pages/Solicitudes/licaenue/licaenue.component';
+import { LICAANUEComponent } from './Pages/Solicitudes/licaanue/licaanue.component';
+import { RENLICAAComponent } from './Pages/Solicitudes/renlicaa/renlicaa.component';
+import { RENLICAEComponent } from './Pages/Solicitudes/renlicae/renlicae.component';
+import { EXTACTECComponent } from './Pages/Solicitudes/extactec/extactec.component';
+import { RETACECOComponent } from './Pages/Solicitudes/retaceco/retaceco.component';
+import { LICTRANSComponent } from './Pages/Solicitudes/lictrans/lictrans.component';
+import { CAMBDIREComponent } from './Pages/Solicitudes/cambdire/cambdire.component';
+import { COMDOMFIComponent } from './Pages/Solicitudes/comdomfi/comdomfi.component';
+import { CAMBDENOComponent } from './Pages/Solicitudes/cambdeno/cambdeno.component';
+import { SOLSOLVEComponent } from './Pages/Solicitudes/solsolve/solsolve.component';
+import { LICORENUComponent } from './Pages/Solicitudes/licorenu/licorenu.component';
+import { RENLICLIComponent } from './Pages/Solicitudes/renlicli/renlicli.component';
+import { PERFUNLOTComponent } from './Pages/Solicitudes/perfunlot/perfunlot.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     BienvenidaComponent,
-    LicenciaActividadesEconomicasTranseunteComponent,
-    LicenciadeActividadEconomicaComponent,
-    LicenciadeExpendidodeBebidasAlcoholicasComponent,
-    RenovacionLicenciaActividadesEconomicasLicoresComponent,
-    EfectuarExtencionActividadEconomicaComponent,
-    EfectuarReclasificacionActividadEconomicaComponent,
-    EfectuarRetiroLicenciaActividadesEconomicaComponent,
-    TramitarConstanciaDomicilioFiscalComponent,
-    EfectuarCambioDireccionActividadEconomicaComponent,
-    OtorgarPermisoFuncionamientoComponent,
-    SolicitarSolvenciaMunicipalComponent
+    SolicitudComponent,
+    LICAENUEComponent,
+    LICAANUEComponent,
+    RENLICAAComponent,
+    RENLICAEComponent,
+    EXTACTECComponent,
+    RETACECOComponent,
+    LICTRANSComponent,
+    CAMBDIREComponent,
+    COMDOMFIComponent,
+    CAMBDENOComponent,
+    SOLSOLVEComponent,
+    LICORENUComponent,
+    RENLICLIComponent,
+    PERFUNLOTComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     AdminRoutingModule,
-    SharedModule
+    SharedModule,
+    FlexLayoutModule
   ]
 })
 export class AdminModule { }

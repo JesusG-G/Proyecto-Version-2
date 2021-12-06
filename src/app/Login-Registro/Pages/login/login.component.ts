@@ -60,7 +60,14 @@ export class LoginComponent implements OnInit {
     .pipe(first())
         .subscribe(
             data=>{
-              this.router.navigate(['usuario']);}
+              if(data[0].cargo==='usuario'){
+                this.router.navigate(['usuario']);
+              }
+              else{
+                this.router.navigate(['admin']);
+              }
+              
+             }
         );
       
     }
