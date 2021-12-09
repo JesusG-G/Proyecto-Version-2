@@ -5,125 +5,158 @@
         </div>
         <mat-divider></mat-divider>
         <div class="formulario">
-        <form  autocomplete="off">
-            <!--Primero select de solicitudes-->
-            <div fxLayout="row">
-                <div fxFlex="100">
-                 <h3>Datos del Solicitante</h3>
-                    <mat-divider></mat-divider>
-                    <mat-form-field appearance="outline" class="max-width">
-                        <mat-label>Cedula</mat-label>
-                        <input matInput type="text">
-                    </mat-form-field>
-                    <div fxLayout="row">
-                        <div fxFlex="50">
-                            <mat-form-field appearance="outline" class="max-width">
-                                <mat-label>Nombres</mat-label>
-                                <input matInput type="text">
-                            </mat-form-field>
+            <form  autocomplete="off">
+                <!--Primero select de solicitudes-->
+                <div fxLayout="row">
+                    <div fxFlex="100">
+                     <h3>Datos del Solicitante</h3>
+                        <mat-divider></mat-divider>
+                        <mat-form-field appearance="outline" class="max-width">
+                            <mat-label>Cedula</mat-label>
+                            <input matInput type="text">
+                        </mat-form-field>
+                        <div fxLayout="row">
+                            <div fxFlex="50">
+                                <mat-form-field appearance="outline" class="max-width">
+                                    <mat-label>Nombres</mat-label>
+                                    <input matInput type="text">
+                                </mat-form-field>
+                            </div>
+                            <div fxFlex="50">
+                                <mat-form-field appearance="outline" class="max-width">
+                                    <mat-label>Apellidos</mat-label>
+                                    <input matInput type="text">
+                                </mat-form-field>
+                            </div>
                         </div>
-                        <div fxFlex="50">
-                            <mat-form-field appearance="outline" class="max-width">
-                                <mat-label>Apellidos</mat-label>
-                                <input matInput type="text">
-                            </mat-form-field>
-                        </div>
+                      
                     </div>
-                  
                 </div>
+                <!--Datos de la empresa-->
+                <!--EMpresa-->
+                <h3>Datos de la Empresa</h3>
+                <mat-divider></mat-divider>
+                <mat-form-field appearance="outline" class="max-width">
+                    <mat-label>Nombre de la Empresa</mat-label>
+                    <input matInput type="text" 
+                           formControlName="empresa" 
+                           id="empresa"  
+                           placeholder="Empresa" 
+                           required 
+                           autofocus>
+                    <span class="text-danger"
+                        >El Nombre de la Empresa es requerida</span>
+                </mat-form-field>
+                <div fxLayout="row">
+                <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                    <mat-label>RIF</mat-label>
+                    <input matInput type="text" 
+                           formControlName="RIF" 
+                           id="RIF"  
+                           placeholder="RIF" 
+                           required 
+                           autofocus>
+                    <span class="text-danger" 
+                        >El RIF es requerida</span>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                    <mat-label>Telefono</mat-label>
+                    <input matInput type="text" 
+                           formControlName="telf" 
+                           id="telf"  
+                           placeholder="Telefono" 
+                           required 
+                           autofocus>
+                    <span class="text-danger" 
+                        >El Telefono es requerida</span>
+                </mat-form-field>
             </div>
-            <!--Datos de la empresa-->
-            <!--EMpresa-->
-            <h3>Datos de la Empresa</h3>
-            <mat-divider></mat-divider>
-            <mat-form-field appearance="outline" class="max-width">
-                <mat-label>Nombre de la Empresa</mat-label>
-                <input matInput type="text" 
-                       formControlName="empresa" 
-                       id="empresa"  
-                       placeholder="Empresa" 
-                       required 
-                       autofocus>
-                <span class="text-danger"
-                    >El Nombre de la Empresa es requerida</span>
-            </mat-form-field>
-            <div fxLayout="row">
-            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
-                <mat-label>RIF</mat-label>
-                <input matInput type="text" 
-                       formControlName="RIF" 
-                       id="RIF"  
-                       placeholder="RIF" 
-                       required 
-                       autofocus>
-                <span class="text-danger" 
-                    >El RIF es requerida</span>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
-                <mat-label>Telefono</mat-label>
-                <input matInput type="text" 
-                       formControlName="telf" 
-                       id="telf"  
-                       placeholder="Telefono" 
-                       required 
-                       autofocus>
-                <span class="text-danger" 
-                    >El Telefono es requerida</span>
-            </mat-form-field>
-        </div>
-            <h3>Direccion</h3>
-            <mat-divider></mat-divider>
-            <mat-form-field appearance="outline" class="max-width">
-                <mat-label>Urbanización</mat-label>
-                <input matInput type="text" 
-                       formControlName="urb" 
-                       id="urb"  
-                       placeholder="Urbanización" 
-                       required 
-                       autofocus >
-                <span class="text-danger"
-                    >La Urbanización es requerida</span>
-            </mat-form-field>
-            <div fxLayout="row">
-                    <mat-form-field appearance="outline" class="max-width" fxFlex="50">
-                        <mat-label>Calle</mat-label>
-                        <input matInput type="text" 
-                            formControlName="calle" 
-                            id="calle"  
-                            placeholder="Calle" 
-                            required 
-                            autofocus>
-                        <span class="text-danger" 
-                            >La Calle es requerida</span>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" class="max-width" fxFlex="50">
-                        <mat-label>Casa/Local/Edificio</mat-label>
-                        <input matInput type="text" 
-                            formControlName="caloed" 
-                            name="caloed" id="caloed"  
-                            placeholder="Casa/Local/Edificio" 
-                            required 
-                            autofocus>
-                        <span class="text-danger" 
-                            >La Calle es requerida</span>
-                    </mat-form-field>
+                <h3>Direccion</h3>
+                <mat-divider></mat-divider>
+                <mat-form-field appearance="outline" class="max-width">
+                    <mat-label>Urbanización</mat-label>
+                    <input matInput type="text" 
+                           formControlName="urb" 
+                           id="urb"  
+                           placeholder="Urbanización" 
+                           required 
+                           autofocus >
+                    <span class="text-danger"
+                        >La Urbanización es requerida</span>
+                </mat-form-field>
+                <div fxLayout="row">
+                        <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                            <mat-label>Calle</mat-label>
+                            <input matInput type="text" 
+                                formControlName="calle" 
+                                id="calle"  
+                                placeholder="Calle" 
+                                required 
+                                autofocus>
+                            <span class="text-danger" 
+                                >La Calle es requerida</span>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                            <mat-label>Casa/Local/Edificio</mat-label>
+                            <input matInput type="text" 
+                                formControlName="caloed" 
+                                name="caloed" id="caloed"  
+                                placeholder="Casa/Local/Edificio" 
+                                required 
+                                autofocus>
+                            <span class="text-danger" 
+                                >La Calle es requerida</span>
+                        </mat-form-field>
+                </div>
+                
+                <!--Datos de los checkbox-->
+            <div fxLayout="column">
+                <mat-checkbox labelPosition="before" >
+                    1.- Solvencia del Seguro Social:
+                </mat-checkbox>
+                <mat-divider></mat-divider>
+                <mat-checkbox labelPosition="before" >
+                    2.-Presentar copia de la Licencia anterior:
+                </mat-checkbox>
+                <mat-divider></mat-divider>
+                <mat-checkbox labelPosition="before" >
+                    3.-Copia del Documento de Propiedad del Inmueble:
+                </mat-checkbox>
+                <mat-divider></mat-divider>
+                <mat-radio-group>
+                    <label>4.-Contrato de Arrendamiento Notariado:</label>
+                    <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
+                    <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
+                </mat-radio-group>
+                <mat-divider></mat-divider>
+                <mat-radio-group>
+                    <label>5.-Original del Certificado de Bomberos:</label>
+                    <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
+                    <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
+                </mat-radio-group>
+                <mat-divider></mat-divider>
+                <mat-checkbox labelPosition="before" >
+                    6.- Copia vigente del Registro de Información Fiscal (RIF) del contribuyente:
+                </mat-checkbox>
+                <mat-divider></mat-divider>
+                <mat-checkbox labelPosition="before" >
+                    7.- Original del Recibo de Pago de Dos(2) Unidades Tributarias por la Tasa:
+                </mat-checkbox>
+                
             </div>
+                <div fxLayout="row">
+                    <button mat-raised-button color="warn" 
+                            type="submit" 
+                            class="btn btn-danger"
+                            >Enviar</button>
+                    <span class="spacer"></span>
+                    <button mat-raised-button color="warn" type="button" class="btn btn-danger">Limpiar</button> 
+                </div>
             
-            
-            <div fxLayout="row">
-                <button mat-raised-button color="warn" 
-                        type="submit" 
-                        class="btn btn-danger"
-                        >Enviar</button>
-                <span class="spacer"></span>
-                <button mat-raised-button color="warn" type="button" class="btn btn-danger">Limpiar</button> 
+            </form>
+    
             </div>
-        
-        </form>
-
-        </div>
-
     </div>
 </div>
 <!--[disabled]="solicitud.invalid"

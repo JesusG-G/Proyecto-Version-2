@@ -33,6 +33,7 @@ mat-card {
 .contenedor{
     margin-top: 15px;
     height: fit-content;
+    overflow: scroll;
 }
 .formulario{
     margin: auto;

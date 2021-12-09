@@ -4,6 +4,7 @@ import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Compoenentes
 import { HomeComponent } from './Pages/home/home.component';
@@ -25,6 +26,10 @@ import { LICORENUComponent } from './Pages/Solicitudes/licorenu/licorenu.compone
 import { RENLICLIComponent } from './Pages/Solicitudes/renlicli/renlicli.component';
 import { PERFUNLOTComponent } from './Pages/Solicitudes/perfunlot/perfunlot.component';
 
+import { FormularioDatosComponent } from './Components/formulario-datos/formulario-datos.component';
+import { ActividadAAAEComponent } from './Components/checkBoxs/actividad-aaae/actividad-aaae.component';
+
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -43,14 +48,17 @@ import { PERFUNLOTComponent } from './Pages/Solicitudes/perfunlot/perfunlot.comp
     SOLSOLVEComponent,
     LICORENUComponent,
     RENLICLIComponent,
-    PERFUNLOTComponent
+    PERFUNLOTComponent,
+    FormularioDatosComponent,
+    ActividadAAAEComponent,
   ],
   imports: [
     CommonModule,
     MaterialModule,
     AdminRoutingModule,
     SharedModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

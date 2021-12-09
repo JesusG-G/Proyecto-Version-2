@@ -89,6 +89,7 @@ export class TramiteComponent implements OnInit {
         urb:['',[Validators.required,Validators.minLength(3)]],
         calle:['',[Validators.required,Validators.minLength(1)]],
         caloed:['',[Validators.required,Validators.minLength(3)]]
+        
       }
     );
     this.solicitante={

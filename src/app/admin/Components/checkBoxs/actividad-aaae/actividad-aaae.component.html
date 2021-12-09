@@ -1,0 +1,75 @@
+<!--Datos de los checkbox-->
+<form [formGroup]="CheckBoxs">
+       <div fxLayout="column">
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_1"
+            name="CheckBox_1">
+                1.- Original de la Planilla de 
+                Solicitud de L.A.E debidamente firmada por 
+                el Representante Legal :
+            </mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_2"
+            name="CheckBox_2">
+                2.- Original de Uso Conforme:
+            </mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_3" 
+            name="CheckBox_3">
+                3.- Zonificación emitido por la
+                Oficina de Planeamiento Urbano:
+            </mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-radio-group>
+                <label>4.-Original del certificado de Bomberos:</label>
+                <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
+                <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
+            </mat-radio-group>
+            <mat-divider></mat-divider>
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_5"
+            name="CheckBox_5">
+                5.- Original de Conformidad emitida por la Asoción de Vecinos,Consejo Comunal <br>
+                o Junta Parroquial, donde opera el establecimiento (en caso de Licencia de Actividades
+                Económicas para Bebidas Alcohólicas)
+            </mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_6"
+            name="CheckBox_6">
+                6.- Original del Recibo de la Tasa Capital Artículo 19 de la Ordenanza sobre Actividades
+                Económicas, entre otros:
+            </mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_7"
+            name="CheckBox_7">
+                7.- Copia vigente, del registro de información Fiscal (RIF), del contribuyente, Socio o Accionistas
+                y del arrendador del Inmueble:
+            </mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_8" 
+            name="CheckBox_8">
+                8.- Copia del acta Constitutiva y Modificaciones, cumpliendo con lo estbalecido en el Artículo 04
+                de la Ordenanza de Actividades Económicas, sobre la formalidad en caso de Sucursal:
+            </mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_9"
+            name="CheckBox_9">
+                9.- Copia del Documento de propiedad del inmueble:
+            </mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-radio-group>
+                <label>10.- Contrato de Arrendamiento Notariado</label>
+                <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
+                <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
+            </mat-radio-group>
+            <mat-divider></mat-divider>
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_11"
+            name="CheckBox_11">
+                11.- Solvencia del Seguro Social:
+            </mat-checkbox>
+            <mat-divider></mat-divider>
+            <mat-checkbox labelPosition="before" formControlName="CheckBox_12"
+            name="CheckBox_12">
+                12.- En caso de Solicitud de Licencia de Restaurant, anexar Permiso
+                Sanitario del Negocio en Referencia:
+            </mat-checkbox>
+        </div>
+</form>
