@@ -29,7 +29,7 @@ export class LICAENUEComponent implements OnInit {
           RIF:['',[Validators.required,Validators.minLength(3)]],
           telf:['',[Validators.required,Validators.minLength(3)]],
           urb:['',[Validators.required,Validators.minLength(3)]],
-          calle:['',[Validators.required,Validators.minLength(3)]],
+          calle:['',[Validators.required,Validators.minLength(1)]],
           caloed:['',[Validators.required,Validators.minLength(3)]],
         }),
         CheckBoxs: this.fb.group(
@@ -37,11 +37,13 @@ export class LICAENUEComponent implements OnInit {
             CheckBox_1:[false,[Validators.requiredTrue]],
             CheckBox_2:[false,[Validators.requiredTrue]],
             CheckBox_3:[false,[Validators.requiredTrue]],
+            CheckBox_4:['',[Validators.required]],
             CheckBox_5:[false,[Validators.requiredTrue]],
             CheckBox_6:[false,[Validators.requiredTrue]],
             CheckBox_7:[false,[Validators.requiredTrue]],
             CheckBox_8:[false,[Validators.requiredTrue]],
             CheckBox_9:[false,[Validators.requiredTrue]],
+            CheckBox_10:['',[Validators.required]],
             CheckBox_11:[false,[Validators.requiredTrue]],
             CheckBox_12:[false,[Validators.requiredTrue]]
           }

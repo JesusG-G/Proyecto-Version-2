@@ -1,0 +1,55 @@
+ <form [formGroup]="CheckBoxs">
+ <!--Datos de los checkbox-->
+    <div fxLayout="column">
+        <mat-checkbox labelPosition="before" 
+        formControlName="CheckBox_1"
+                    name="CheckBox_1">
+            1.- Copia de la Ultima Licencia Aduanal:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_2"
+                    name="CheckBox_2" >
+            2.-Reporte de Situación fiscal del sistema, a nombre de la empresa, Solvente:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before" 
+        formControlName="CheckBox_3"
+                    name="CheckBox_3">
+            3.-Original del Recibo de pago de dos (2) Unidades Tributarias por Renovación:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_4"
+        name="CheckBox_4" >
+            4.-Copia del Documento de Propiedad del Inmueble:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-radio-group formControlName="CheckBox_5"
+        name="CheckBox_5">
+            <label>5.-Contrato de Arrendamiento Notariado:</label>
+            <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
+            <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
+        </mat-radio-group>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_6"
+                    name="CheckBox_6" >
+            6.- Solvencia del Seguro Social:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-radio-group formControlName="CheckBox_7"
+        name="CheckBox_7">
+            <label>7.- Original del Certificado de Bomberos:</label>
+            <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
+            <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
+        </mat-radio-group>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before" 
+        formControlName="CheckBox_8"
+                    name="CheckBox_8">
+            8.- Copia vigente del Registro de información Fiscal (RIF):
+        </mat-checkbox>
+        
+    </div>
+</form>

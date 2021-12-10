@@ -16,21 +16,9 @@ export class FormularioDatosComponent implements OnInit{
     this.DatosFormulario=this.rootFormGroup.control.get('datos') as FormGroup;
   }
 
-/* static datos():FormGroup{
-    return new FormGroup(
-       {
-        cedula: new FormControl('',[Validators.required]),
-        nombre: new FormControl('',[Validators.required]),
-        apellido: new FormControl('',[Validators.required]),
-        tipoSolicitud: new FormControl('',[Validators.required]),
-        empresa: new FormControl('',[Validators.required,Validators.minLength(3)]),
-        RIF:new FormControl('',[Validators.required,Validators.minLength(3)]),
-        telf:new FormControl('',[Validators.required,Validators.minLength(3)]),
-        urb:new FormControl('',[Validators.required,Validators.minLength(3)]),
-        calle:new FormControl('',[Validators.required,Validators.minLength(3)]),
-        caloed:new FormControl('',[Validators.required,Validators.minLength(3)]),
-      }
-    )
-  }*/
+  campoNoEsValido(campo:string){
+    return this.DatosFormulario.controls[campo].errors 
+          && this.DatosFormulario.controls[campo].touched;
+  }
 
 }

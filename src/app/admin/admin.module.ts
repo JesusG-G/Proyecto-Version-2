@@ -28,6 +28,13 @@ import { PERFUNLOTComponent } from './Pages/Solicitudes/perfunlot/perfunlot.comp
 
 import { FormularioDatosComponent } from './Components/formulario-datos/formulario-datos.component';
 import { ActividadAAAEComponent } from './Components/checkBoxs/actividad-aaae/actividad-aaae.component';
+import { CambioDenominacionComponent } from './Components/checkBoxs/cambio-denominacion/cambio-denominacion.component';
+import { CambioDireccionComponent } from './Components/checkBoxs/cambio-direccion/cambio-direccion.component';
+import { DomicilioFiscalComponent } from './Components/checkBoxs/domicilio-fiscal/domicilio-fiscal.component';
+import { ExtensionAEComponent } from './Components/checkBoxs/extension-ae/extension-ae.component';
+import { LicenciaTranseunteComponent } from './Components/checkBoxs/licencia-transeunte/licencia-transeunte.component';
+import { RenovacionLicAAComponent } from './Components/checkBoxs/renovacion-lic-aa/renovacion-lic-aa.component';
+import { RenovacionLicAEComponent } from './Components/checkBoxs/renovacion-lic-ae/renovacion-lic-ae.component';
 
 
 @NgModule({
@@ -51,6 +58,13 @@ import { ActividadAAAEComponent } from './Components/checkBoxs/actividad-aaae/ac
     PERFUNLOTComponent,
     FormularioDatosComponent,
     ActividadAAAEComponent,
+    CambioDenominacionComponent,
+    CambioDireccionComponent,
+    DomicilioFiscalComponent,
+    ExtensionAEComponent,
+    LicenciaTranseunteComponent,
+    RenovacionLicAAComponent,
+    RenovacionLicAEComponent,
   ],
   imports: [
     CommonModule,

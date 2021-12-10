@@ -4,7 +4,21 @@
             <h1>Licencia de Actividad Aduanera Nueva</h1>
         </div>
         <mat-divider></mat-divider>
-        
+        <div class="formulario">
+            <form  autocomplete="off" [formGroup]="solicitud" (ngSubmit)="guardar()">
+                <app-formulario-datos></app-formulario-datos>
+                <app-actividad-aaae></app-actividad-aaae>
+         <div fxLayout="row">
+                    <button mat-raised-button color="warn" 
+                            type="submit" 
+                            class="btn btn-danger"
+                            [disabled]="solicitud.invalid"
+                            >Enviar</button>
+                    <span class="spacer"></span>
+                    <button mat-raised-button color="warn" type="button" class="btn btn-danger">Limpiar</button> 
+                </div>
+            
+            </form>
         
     </div>
 </div>

@@ -1,0 +1,48 @@
+<form [formGroup]="CheckBoxs">
+    <!--Datos de los checkbox-->
+    <div fxLayout="column">
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_1"
+                    name="CheckBox_1" >
+            1.- Copia de la última Licencia de Actividad Económica:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before" 
+        formControlName="CheckBox_2"
+                    name="CheckBox_2">
+            2.- Copia del Registro Mercantil:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-radio-group formControlName="CheckBox_3"
+        name="CheckBox_3">
+            <label>3.-Reporte de Situción Fiscal del Sistema, a nombre de la Empresa:</label>
+            <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
+            <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
+        </mat-radio-group>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_4"
+                    name="CheckBox_4" >
+            4.- Original del Recibo d ePAgo de Dos (2) Unidades Tributarias para la constancia:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before" 
+        formControlName="CheckBox_5"
+                    name="CheckBox_5">
+            5.- Copia del Documento de Propiedad del Inmueble:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_6"
+                    name="CheckBox_6" >
+            6.- Contrato de Arrendamiento Notariado:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_7"
+                    name="CheckBox_7" >
+            7.- Copia vigente, del registro de información Fiscal (RIF):
+        </mat-checkbox>
+        
+    </div>
+</form>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import {Router, RouterModule,Routes} from '@angular/router';
-import { ErrorPageComponent } from './shared/error-page/error-page.component';
+
 
 
 const routes:Routes=[
@@ -17,12 +17,8 @@ const routes:Routes=[
     loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule)
   },
   {
-    path:'404',
-    component:ErrorPageComponent
-  },
-  {
     path:'**',
-    redirectTo:'404'
+    redirectTo:'auth'
   }
 ];
 

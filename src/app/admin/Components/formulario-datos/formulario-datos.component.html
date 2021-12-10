@@ -10,6 +10,9 @@ autocomplete="off">
                 name="cedula"
                 formControlName="cedula"
             >
+            <span class="text-danger"
+            *ngIf="campoNoEsValido('cedula')"
+           >La Cedula del Solicitante es requerida</span>
             </mat-form-field>
             <div fxLayout="row">
                 <div fxFlex="50">
@@ -18,6 +21,9 @@ autocomplete="off">
                         <input matInput type="text"
                                 name="nombre"
                                 formControlName="nombre">
+                                <span class="text-danger"
+                                *ngIf="campoNoEsValido('nombre')"
+                               >Los nombres del solicitante son requeridos</span>
                     </mat-form-field>
                 </div>
                 <div fxFlex="50">
@@ -26,6 +32,9 @@ autocomplete="off">
                         <input matInput type="text"
                                 name="apellido"
                                 formControlName="apellido">
+                                <span class="text-danger"
+                                *ngIf="campoNoEsValido('apellido')"
+                               >Los apellidos del solicitante son requeridos</span>
                     </mat-form-field>
                 </div>
             </div>
@@ -46,6 +55,7 @@ autocomplete="off">
             required 
             autofocus>
         <span class="text-danger"
+             *ngIf="campoNoEsValido('empresa')"
             >El Nombre de la Empresa es requerida</span>
     </mat-form-field>
     <div fxLayout="row">
@@ -59,6 +69,7 @@ autocomplete="off">
             required 
             autofocus>
         <span class="text-danger" 
+        *ngIf="campoNoEsValido('RIF')"
             >El RIF es requerida</span>
     </mat-form-field>
 
@@ -72,6 +83,7 @@ autocomplete="off">
             required 
             autofocus>
         <span class="text-danger" 
+        *ngIf="campoNoEsValido('telf')"
             >El Telefono es requerida</span>
     </mat-form-field>
     </div>
@@ -87,6 +99,7 @@ autocomplete="off">
             required 
             autofocus >
         <span class="text-danger"
+        *ngIf="campoNoEsValido('urb')"
             >La Urbanización es requerida</span>
     </mat-form-field>
     <div fxLayout="row">
@@ -100,6 +113,7 @@ autocomplete="off">
                     required 
                     autofocus>
                 <span class="text-danger" 
+                *ngIf="campoNoEsValido('calle')"
                     >La Calle es requerida</span>
             </mat-form-field>
             <mat-form-field appearance="outline" class="max-width" fxFlex="50">
@@ -112,6 +126,7 @@ autocomplete="off">
                     required 
                     autofocus>
                 <span class="text-danger" 
+                *ngIf="campoNoEsValido('caloed')"
                     >La Calle es requerida</span>
             </mat-form-field>
     </div>

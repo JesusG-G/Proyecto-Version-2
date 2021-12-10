@@ -1,0 +1,49 @@
+<form [formGroup]="CheckBoxs">
+   <!--Datos de los checkbox-->
+    <div fxLayout="column">
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_1"
+                    name="CheckBox_1"  >
+            1.- Solvencia del Seguro Social:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_2"
+                    name="CheckBox_2"  >
+            2.-Presentar copia de la Licencia anterior:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before" 
+        formControlName="CheckBox_3"
+                    name="CheckBox_3" >
+            3.-Copia del Documento de Propiedad del Inmueble:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-radio-group formControlName="CheckBox_4"
+        name="CheckBox_4" >
+            <label>4.-Contrato de Arrendamiento Notariado:</label>
+            <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
+            <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
+        </mat-radio-group>
+        <mat-divider></mat-divider>
+        <mat-radio-group formControlName="CheckBox_5"
+        name="CheckBox_5" >
+            <label>5.-Original del Certificado de Bomberos:</label>
+            <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
+            <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
+        </mat-radio-group>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before" 
+        formControlName="CheckBox_6"
+                    name="CheckBox_6"  >
+            6.- Copia vigente del Registro de Información Fiscal (RIF) del contribuyente:
+        </mat-checkbox>
+        <mat-divider></mat-divider>
+        <mat-checkbox labelPosition="before"
+        formControlName="CheckBox_7"
+                    name="CheckBox_7"  >
+            7.- Original del Recibo de Pago de Dos(2) Unidades Tributarias por la Tasa:
+        </mat-checkbox>
+        
+    </div>
+</form>
