@@ -5,7 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 //Compoenentes
 import { HomeComponent } from './Pages/home/home.component';
 
@@ -35,6 +35,7 @@ import { ExtensionAEComponent } from './Components/checkBoxs/extension-ae/extens
 import { LicenciaTranseunteComponent } from './Components/checkBoxs/licencia-transeunte/licencia-transeunte.component';
 import { RenovacionLicAAComponent } from './Components/checkBoxs/renovacion-lic-aa/renovacion-lic-aa.component';
 import { RenovacionLicAEComponent } from './Components/checkBoxs/renovacion-lic-ae/renovacion-lic-ae.component';
+
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { RenovacionLicAEComponent } from './Components/checkBoxs/renovacion-lic-
     AdminRoutingModule,
     SharedModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class AdminModule { }

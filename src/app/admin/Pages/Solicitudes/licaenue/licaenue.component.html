@@ -16,7 +16,10 @@
                             [disabled]="solicitud.invalid"
                             >Enviar</button>
                     <span class="spacer"></span>
-                    <button mat-raised-button color="warn" type="button" class="btn btn-danger">Limpiar</button> 
+                    <button mat-raised-button color="warn" 
+                        type="button" 
+                        class="btn btn-danger" 
+                        (click)="LimpiarFormulario()">Limpiar</button> 
                 </div>
             
             </form>
@@ -30,5 +33,3 @@
     </div>
 </div>
 
-<!--[disabled]="solicitud.invalid"
- (click)="LimpiarFormulario()"-->

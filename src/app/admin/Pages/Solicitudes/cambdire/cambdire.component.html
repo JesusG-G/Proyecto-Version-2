@@ -5,7 +5,7 @@
         </div>
         <mat-divider></mat-divider>
         <div class="formulario">
-        <form  autocomplete="off">
+        <form  autocomplete="off" [formGroup]="solicitud" (ngSubmit)="guardar()">
             <app-formulario-datos></app-formulario-datos>
             
             <app-cambio-direccion></app-cambio-direccion>
@@ -14,9 +14,10 @@
                 <button mat-raised-button color="warn" 
                         type="submit" 
                         class="btn btn-danger"
+                        [disabled]="solicitud.invalid"
                         >Enviar</button>
                 <span class="spacer"></span>
-                <button mat-raised-button color="warn" type="button" class="btn btn-danger">Limpiar</button> 
+                <button mat-raised-button color="warn" type="button" class="btn btn-danger" (click)="LimpiarFormulario()">Limpiar</button> 
             </div>
         
         </form>
