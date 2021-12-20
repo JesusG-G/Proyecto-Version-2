@@ -1,0 +1,69 @@
+<form [formGroup]="CheckBoxs">
+  <!--Datos de los checkbox-->
+  <div fxLayout="column">
+    <div fxLayout="row">
+      <label fxFlex="90"> 1.- Original de Recibo de Pago </label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_1"
+        name="CheckBox_1"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+      <label fxFlex="90">
+        2.- Copia de la última Constancia de Renovación de Licencia Año
+      </label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_2"
+        name="CheckBox_2"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+      <label fxFlex="90">
+        3.- Copia vigente del Registro de Información Fiscal (RIF)
+      </label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_3"
+        name="CheckBox_3"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <br />
+    <div fxLayout="row">
+      <mat-form-field fxFlex="50">
+        <mat-label>Indicar Indole del negocio</mat-label>
+        <mat-select formControlName="CheckBox_4">
+          <mat-option
+            [value]="indole"
+            *ngFor="let indole of indoles; let i = index"
+            required
+            >{{ indole }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+        <mat-label>Número</mat-label>
+        <input
+          matInput
+          type="text"
+          name="numero"
+          formControlName="numero"
+          id="numero"
+          placeholder="numero"
+          required
+          autofocus
+        />
+        <span class="text-danger" *ngIf="campoNoEsValido('numero')"
+          >El numero es requerido</span
+        >
+      </mat-form-field>
+    </div>
+  </div>
+</form>

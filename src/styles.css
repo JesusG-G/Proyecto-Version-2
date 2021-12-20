@@ -95,6 +95,10 @@ mat-card {
     color:black;
 }
 
+.text-break{
+    word-break: break-all;
+    display: flex;
+}
 
 
 

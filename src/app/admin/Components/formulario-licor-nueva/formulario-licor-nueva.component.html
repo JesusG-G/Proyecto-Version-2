@@ -1,0 +1,77 @@
+<form [formGroup]="DatosFormulario"
+autocomplete="off">
+    <h3>Datos de la Empresa</h3>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+    <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+        <mat-label>Nombre de la Empresa</mat-label>
+        <input matInput type="text" 
+            name="empresa" 
+            formControlName="empresa"
+            id="empresa"  
+            placeholder="Empresa" 
+            required 
+            autofocus>
+        <span class="text-danger"
+             *ngIf="campoNoEsValido('empresa')"
+            >El Nombre de la Empresa es requerida</span>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+        <mat-label>RIF</mat-label>
+        <input matInput type="text" 
+            name="RIF"
+            formControlName="RIF" 
+            id="RIF"  
+            placeholder="RIF" 
+            required 
+            autofocus>
+        <span class="text-danger" 
+        *ngIf="campoNoEsValido('RIF')"
+            >El RIF es requerida</span>
+    </mat-form-field>
+    </div>
+    <h3>Direccion</h3>
+    <mat-divider></mat-divider>
+    <mat-form-field appearance="outline" class="max-width">
+        <mat-label>Urbanización</mat-label>
+        <input matInput type="text" 
+            name="urb"
+            formControlName="urb" 
+            id="urb"  
+            placeholder="Urbanización" 
+            required 
+            autofocus >
+        <span class="text-danger"
+        *ngIf="campoNoEsValido('urb')"
+            >La Urbanización es requerida</span>
+    </mat-form-field>
+    <div fxLayout="row">
+            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                <mat-label>Calle</mat-label>
+                <input matInput type="text" 
+                    name="calle"
+                    formControlName="calle" 
+                    id="calle"  
+                    placeholder="Calle" 
+                    required 
+                    autofocus>
+                <span class="text-danger" 
+                *ngIf="campoNoEsValido('calle')"
+                    >La Calle es requerida</span>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                <mat-label>Casa/Local/Edificio</mat-label>
+                <input matInput type="text" 
+                    name="caloed"
+                    formControlName="caloed" 
+                    nid="caloed"  
+                    placeholder="Casa/Local/Edificio" 
+                    required 
+                    autofocus>
+                <span class="text-danger" 
+                *ngIf="campoNoEsValido('caloed')"
+                    >La Calle es requerida</span>
+            </mat-form-field>
+    </div>
+</form>

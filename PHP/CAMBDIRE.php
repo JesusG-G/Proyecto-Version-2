@@ -47,7 +47,7 @@
             `CheckBox_7`, 
             `CheckBox_8`, 
             `CheckBox_9`, 
-            `CheckBox_10`, 
+            `CheckBox_10`
             ) VALUES 
             ('$CodigoActa',
             '$Nombres',
@@ -71,7 +71,7 @@
             '$CheckBox_7',
             '$CheckBox_8',
             '$CheckBox_9',
-            '$CheckBox_10',
+            '$CheckBox_10'
             )";
     if ($conexionBD->query($sql) === TRUE) {
         $authdata = [

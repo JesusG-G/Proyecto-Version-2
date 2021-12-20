@@ -104,6 +104,7 @@ export class CAMBDIREComponent implements OnInit {
 
     LimpiarFormulario(){
       this.solicitud.reset();
+      this.solicitud.get('datos')?.get('tipoSolicitud')?.setValue('CAMBDIRE');
     }
 
 }

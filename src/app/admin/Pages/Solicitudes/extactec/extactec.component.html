@@ -15,11 +15,18 @@
                         [disabled]="solicitud.invalid"
                         >Enviar</button>
                 <span class="spacer"></span>
-                <button mat-raised-button color="warn" type="button" class="btn btn-danger">Limpiar</button> 
+                <button mat-raised-button 
+                        color="warn" 
+                        type="button" 
+                        class="btn btn-danger"
+                        (click)="LimpiarFormulario()">Limpiar</button> 
             </div>
         
         </form>
-
+        <h1>Valor del formualrio</h1>
+        <span>{{solicitud.value|json}}</span>
+        <h1>Valid Formulario</h1>
+        <span>{{solicitud.valid}}</span>
         </div>
 
     </div>

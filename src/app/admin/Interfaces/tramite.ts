@@ -2,13 +2,16 @@
 
 export interface Tramite {
     id?:number,
-    solicitante:solicitante,
-    tipo:Solicitud,
-    empresa:string,
-    RIF:string,
-    telf:string,
-    direccion:Direccion,
+    solicitante?:solicitante,
+    tipo?:Solicitud,
+    empresa?:string,
+    RIF?:string,
+    telf?:string,
+    direccion?:Direccion,
     fecha:Fecha,
+    organismo?:string,
+    codigoLAE?:string,
+    numero?:string,
     CheckBox_1?:any,
     CheckBox_2?:any,
     CheckBox_3?:any,
@@ -20,7 +23,12 @@ export interface Tramite {
     CheckBox_9?:any,
     CheckBox_10?:any,
     CheckBox_11?:any,
-    CheckBox_12?:any
+    CheckBox_12?:any,
+    CheckBox_13?:any,
+    CheckBox_14?:any,
+    CheckBox_15?:any,
+    CheckBox_16?:any,
+    CheckBox_17?:any
 
 
 }

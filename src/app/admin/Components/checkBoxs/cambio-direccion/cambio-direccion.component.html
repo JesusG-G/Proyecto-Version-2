@@ -1,67 +1,116 @@
 <form [formGroup]="CheckBoxs">
-    <!--Datos de los checkbox-->
-    <div fxLayout="column">
-        <mat-checkbox labelPosition="before"
+  <!--Datos de los checkbox-->
+  <div fxLayout="column">
+    <div fxlayout="row">
+      <label fxFlex="90">
+        1.- Oficio Original informado por el Cambio de Dirección
+        Realizada:</label
+      >
+      <mat-checkbox
+        labelPosition="before"
         formControlName="CheckBox_1"
-                    name="CheckBox_1" >
-            
-            1.- Oficio Original informado por el Cambio de Dirección Realizada:
-        </mat-checkbox>
-        <mat-divider></mat-divider>
-        <mat-checkbox labelPosition="before"
-        formControlName="CheckBox_2"
-                    name="CheckBox_2" >
-            2.- Copia del Registro Mercantil:
-        </mat-checkbox>
-        <mat-divider></mat-divider>
-        <mat-radio-group formControlName="CheckBox_3"
-        name="CheckBox_3">
-            <label>3.-Original del certificado de Bomberos:</label>
-            <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
-            <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
-        </mat-radio-group>
-        <mat-divider></mat-divider>
-        <mat-checkbox labelPosition="before"
-        formControlName="CheckBox_4"
-                    name="CheckBox_4" >
-            4.- Reporte de Situación Fiscal del Sistema, Socios o Accionistas y Arrendador:
-        </mat-checkbox>
-        <mat-divider></mat-divider>
-        <mat-checkbox labelPosition="before"
-        formControlName="CheckBox_5"
-                    name="CheckBox_5" >
-            5.- Original del Uso Conforme
-        </mat-checkbox>
-        <mat-divider></mat-divider>
-        <mat-checkbox labelPosition="before" 
-        formControlName="CheckBox_6"
-                    name="CheckBox_6">
-            6.- Zonifiación emitido por la Oficina de Planeamiento Urbano:
-        </mat-checkbox>
-        <mat-divider></mat-divider>
-        <mat-checkbox labelPosition="before"
-        formControlName="CheckBox_7"
-                    name="CheckBox_7" >
-            7.- Copia del Documento de Propiedad del Inmueble:
-        </mat-checkbox>
-        <mat-divider></mat-divider>
-        <mat-radio-group formControlName="CheckBox_8"
-        name="CheckBox_8">
-            <label>8.- Contrato de Arrendamiento Notariado</label>
-            <mat-radio-button value="Vigente" >Vigente</mat-radio-button>
-            <mat-radio-button value="Vencida" >Vencida</mat-radio-button>
-        </mat-radio-group>
-        <mat-divider></mat-divider>
-        <mat-checkbox labelPosition="before" 
-        formControlName="CheckBox_9"
-                    name="CheckBox_9">
-            9.- Original de la Licencia de Actividades Económicas:
-        </mat-checkbox>
-        <mat-divider></mat-divider>
-        <mat-checkbox labelPosition="before" 
-        formControlName="CheckBox_10"
-        name="CheckBox_10">
-            10.- Original del último Trimestre Cancelado:
-        </mat-checkbox>
+        name="CheckBox_1"
+      >
+      </mat-checkbox>
     </div>
+    <mat-divider></mat-divider>
+    <div fxlayout="row">
+      <label fxFlex="90">2.- Copia del Registro Mercantil:</label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_2"
+        name="CheckBox_2"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-radio-group formControlName="CheckBox_3" name="CheckBox_3">
+      <div fxLayout="row">
+        <label fxFlex="80">3.-Original del certificado de Bomberos:</label>
+        <mat-radio-button value="Vigente">Vigente</mat-radio-button>
+        <mat-radio-button value="Vencida">Vencida</mat-radio-button>
+      </div>
+    </mat-radio-group>
+    <mat-divider></mat-divider>
+    <div fxlayout="row">
+      <label fxFlex="90"
+        >4.- Reporte de Situación Fiscal del Sistema, Socios o Accionistas y
+        Arrendador:</label
+      >
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_4"
+        name="CheckBox_4"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxlayout="row">
+      <label fxFlex="90">5.- Original del Uso Conforme</label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_5"
+        name="CheckBox_5"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxlayout="row">
+      <label fxFlex="90"
+        >6.- Zonifiación emitido por la Oficina de Planeamiento Urbano:</label
+      >
+
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_6"
+        name="CheckBox_6"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxlayout="row">
+      <label fxFlex="90"
+        >7.- Copia del Documento de Propiedad del Inmueble:</label
+      >
+
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_7"
+        name="CheckBox_7"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-radio-group formControlName="CheckBox_8" name="CheckBox_8">
+      <div fxLayout="row">
+        <label fxFlex="80">8.- Contrato de Arrendamiento Notariado</label>
+        <mat-radio-button value="Vigente">Vigente</mat-radio-button>
+        <mat-radio-button value="Vencida">Vencida</mat-radio-button>
+      </div>
+    </mat-radio-group>
+    <mat-divider></mat-divider>
+    <div fxlayout="row">
+      <label fxFlex="90"
+        >9.- Original de la Licencia de Actividades Económicas:</label
+      >
+
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_9"
+        name="CheckBox_9"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxlayout="row">
+      <label fxFlex="90">10.- Original del último Trimestre Cancelado:</label>
+
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_10"
+        name="CheckBox_10"
+      >
+      </mat-checkbox>
+    </div>
+  </div>
 </form>

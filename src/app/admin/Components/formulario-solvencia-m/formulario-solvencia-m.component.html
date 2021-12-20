@@ -1,0 +1,150 @@
+<form [formGroup]="DatosFormulario"
+autocomplete="off">
+    <div fxLayout="row">
+        <div fxFlex="100">
+        <h3>Datos del Solicitante</h3>
+            <mat-divider></mat-divider>
+            <mat-form-field appearance="outline" class="max-width">
+                <mat-label>Cedula</mat-label>
+                <input matInput type="text"
+                name="cedula"
+                formControlName="cedula"
+            >
+            <span class="text-danger"
+            *ngIf="campoNoEsValido('cedula')"
+           >La Cedula del Solicitante es requerida</span>
+            </mat-form-field>
+            <div fxLayout="row">
+                <div fxFlex="50">
+                    <mat-form-field appearance="outline" class="max-width">
+                        <mat-label>Nombres</mat-label>
+                        <input matInput type="text"
+                                name="nombre"
+                                formControlName="nombre">
+                                <span class="text-danger"
+                                *ngIf="campoNoEsValido('nombre')"
+                               >Los nombres del solicitante son requeridos</span>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50">
+                    <mat-form-field appearance="outline" class="max-width">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput type="text"
+                                name="apellido"
+                                formControlName="apellido">
+                                <span class="text-danger"
+                                *ngIf="campoNoEsValido('apellido')"
+                               >Los apellidos del solicitante son requeridos</span>
+                    </mat-form-field>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    <!--Datos de la empresa-->
+    <!--EMpresa-->
+    <h3>Datos de la Empresa</h3>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+        <mat-form-field appearance="outline" class="max-width"
+        fxFlex="50">
+            <mat-label>Nombre de la Empresa</mat-label>
+            <input matInput type="text" 
+                name="empresa" 
+                formControlName="empresa"
+                id="empresa"  
+                placeholder="Empresa" 
+                required 
+                autofocus>
+            <span class="text-danger"
+                 *ngIf="campoNoEsValido('empresa')"
+                >El Nombre de la Empresa es requerida</span>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+            <mat-label>RIF</mat-label>
+            <input matInput type="text" 
+                name="RIF"
+                formControlName="RIF" 
+                id="RIF"  
+                placeholder="RIF" 
+                required 
+                autofocus>
+            <span class="text-danger" 
+            *ngIf="campoNoEsValido('RIF')"
+                >El RIF es requerida</span>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+            <mat-label>Organismo</mat-label>
+            <input matInput type="text" 
+                name="organismo"
+                formControlName="organismo" 
+                id="organismo"  
+                placeholder="Organismo" 
+                required 
+                autofocus>
+            <span class="text-danger" 
+            *ngIf="campoNoEsValido('organismo')"
+                >El Organismo es requerido</span>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+            <mat-label>Codigo de Licencia AE</mat-label>
+            <input matInput type="text" 
+                name="codigoLAE"
+                formControlName="codigoLAE" 
+                id="codigoLAE"  
+                placeholder="Codigo de Licencia AE" 
+                required 
+                autofocus>
+            <span class="text-danger" 
+            *ngIf="campoNoEsValido('codigoLAE')"
+                >El Codigo de Licencia AE es requerido</span>
+        </mat-form-field>
+    </div>
+    <mat-divider></mat-divider>
+    <h3>Direccion</h3>
+    <mat-divider></mat-divider>
+    <mat-form-field appearance="outline" class="max-width">
+        <mat-label>Urbanización</mat-label>
+        <input matInput type="text" 
+            name="urb"
+            formControlName="urb" 
+            id="urb"  
+            placeholder="Urbanización" 
+            required 
+            autofocus >
+        <span class="text-danger"
+        *ngIf="campoNoEsValido('urb')"
+            >La Urbanización es requerida</span>
+    </mat-form-field>
+    <div fxLayout="row">
+            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                <mat-label>Calle</mat-label>
+                <input matInput type="text" 
+                    name="calle"
+                    formControlName="calle" 
+                    id="calle"  
+                    placeholder="Calle" 
+                    required 
+                    autofocus>
+                <span class="text-danger" 
+                *ngIf="campoNoEsValido('calle')"
+                    >La Calle es requerida</span>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
+                <mat-label>Casa/Local/Edificio</mat-label>
+                <input matInput type="text" 
+                    name="caloed"
+                    formControlName="caloed" 
+                    nid="caloed"  
+                    placeholder="Casa/Local/Edificio" 
+                    required 
+                    autofocus>
+                <span class="text-danger" 
+                *ngIf="campoNoEsValido('caloed')"
+                    >La Calle es requerida</span>
+            </mat-form-field>
+    </div>
+    
+</form>

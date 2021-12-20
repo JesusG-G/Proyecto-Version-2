@@ -108,5 +108,6 @@ export class LICAANUEComponent implements OnInit {
 
     LimpiarFormulario(){
       this.solicitud.reset();
+      this.solicitud.get('datos')?.get('tipoSolicitud')?.setValue('LICAANUE');
     }
 }

@@ -1,0 +1,67 @@
+<form [formGroup]="CheckBoxs">
+  <!--Datos de los checkbox-->
+  <div fxLayout="column">
+    <div fxLayout="row">
+      <label fxFlex="90">
+        1.- Oficio Original informando el Retiro de Licencia(s) de Actividades
+        Economicas:
+      </label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_1"
+        name="CheckBox_1"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+      <label fxFlex="90">
+        2.-Reporte solvente de la situación Fiscal en el Sistema, a nombre de la
+        Empresa:
+      </label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_2"
+        name="CheckBox_2"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+      <label fxFlex="90">
+        3.- Original de la Licencia de Actividades Económicas:
+      </label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_3"
+        name="CheckBox_3"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+      <label fxFlex="90">
+        4.- Original del último Trimestre Cancelado a la fecha:
+      </label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_4"
+        name="CheckBox_4"
+      >
+      </mat-checkbox>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+      <label fxFlex="90">
+        5.- Fotocopia (legible) de la Declaración Estimada y Declaración
+        Definitiva:
+      </label>
+      <mat-checkbox
+        labelPosition="before"
+        formControlName="CheckBox_5"
+        name="CheckBox_5"
+      >
+      </mat-checkbox>
+    </div>
+  </div>
+</form>

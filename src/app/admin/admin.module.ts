@@ -35,6 +35,13 @@ import { ExtensionAEComponent } from './Components/checkBoxs/extension-ae/extens
 import { LicenciaTranseunteComponent } from './Components/checkBoxs/licencia-transeunte/licencia-transeunte.component';
 import { RenovacionLicAAComponent } from './Components/checkBoxs/renovacion-lic-aa/renovacion-lic-aa.component';
 import { RenovacionLicAEComponent } from './Components/checkBoxs/renovacion-lic-ae/renovacion-lic-ae.component';
+import { RetiroActividadEComponent } from './Components/checkBoxs/retiro-actividad-e/retiro-actividad-e.component';
+import { FormularioSolvenciaMComponent } from './Components/formulario-solvencia-m/formulario-solvencia-m.component';
+import { SolvenciamComponent } from './Components/checkBoxs/solvenciam/solvenciam.component';
+import { LicenciaLicoresNuevaComponent } from './Components/checkBoxs/licencia-licores-nueva/licencia-licores-nueva.component';
+import { FormularioLicorNuevaComponent } from './Components/formulario-licor-nueva/formulario-licor-nueva.component';
+import { RenovacionliclicoComponent } from './Components/checkBoxs/renovacionliclico/renovacionliclico.component';
+import { DocumentoComponent } from './Components/documento/documento.component';
 
 
 
@@ -66,6 +73,13 @@ import { RenovacionLicAEComponent } from './Components/checkBoxs/renovacion-lic-
     LicenciaTranseunteComponent,
     RenovacionLicAAComponent,
     RenovacionLicAEComponent,
+    RetiroActividadEComponent,
+    FormularioSolvenciaMComponent,
+    SolvenciamComponent,
+    LicenciaLicoresNuevaComponent,
+    FormularioLicorNuevaComponent,
+    RenovacionliclicoComponent,
+    DocumentoComponent,
   ],
   imports: [
     CommonModule,
