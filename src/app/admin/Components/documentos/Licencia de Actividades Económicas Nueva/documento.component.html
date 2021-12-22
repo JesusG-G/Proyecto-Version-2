@@ -1,0 +1,93 @@
+<div id="Documento" fxLayout="column">
+    <div fxLayout="row" class="encabezado" >
+        <div fxFlex="15">
+            <img src="../../../../assets/escudo.jpg" alt="">
+        </div>
+        <div  fxFlex="70">
+           
+            <p >
+                Republica Bolivariana de Venezuela
+                <br>
+                Alcaldía del Municipio Puerto Cabello
+                <br>
+                Servicio Municipal de Administración Tributaria
+                <br>
+                Gerencia de Tramitación y asistencia al Contribuyente
+            </p>
+                <div class="subencabezado">
+                    <h4><b>ACTA DE RECEPCIÓN</b></h4>
+                    <h4><b>(LICENCIA DE ACTIVIDADES ECONOMICAS NUEVA)</b></h4>
+                    <h5><b>(Codigo del acta)</b></h5>
+                </div>
+            
+        </div>
+        <div  fxFlex="15">
+            <img src="../../../../assets/semat logo.jpg" alt="">
+        </div>
+    </div>
+    <div>
+        
+        <p class="cuerpo">
+            En Puerto Cabello a los (días) (Dia en número) días del mes de (mes) del año (año) 
+    Ciudadano: (nombre del funcionario), C.I. No. (cedula del funcionario), en su carácter de:
+     “FUNCIONARIO” Adscrito al Servicio Municipal de Administración Tributaria (Semat-PC), hace constar que el(la) ciudadano(a) 
+    Representante(s) de la Empresa: (Nombre de la empresa) 
+    Número de Rif: (RIF), ubicación (Dirección de la empresa), el señor(a) : (Nombre del solicitante), cedula: (Cedula del solicitante), teléfono: (Teléfono que se asignó en el formulario) asistió, 
+    hoy con la finalidad de consignar los siguientes documentos:
+
+        </p>
+        <div class="checkBoxs" >
+            <form  [formGroup]="solicitud" >
+                <app-actividad-aaae></app-actividad-aaae>
+            </form>
+            
+        </div>
+        <p class="parrafo">
+            Me comprometo a consignar de conformidad con lo establecido en el Art. 50 de la Ley Organica de Procedimientos Administrativos, 
+            me comprometo a consignar en oficio dirigido al (Semat-PC), en un plazo de quince (15) días, 
+            cualquier otro documento que el servicio Municipal de Administración Tributaria Puerto Cabello, 
+            considere necesario, para otorgar el registro de la Renovacion de Licencia de Actividades Económicas.
+                <br>
+            Se levanta la presente Acta No. (código del acta) de dos folios, en tres (03) ejemplares del mismo tenor
+            y a un solo efecto,uno de los cuales queda en el poder del (la) interesado(a).
+            <br>
+            Conforme con lo antes solicitado, firman:
+
+        </p>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex="45" >
+            <p class="encabezado">
+                <b> 
+                    Por el Servicio Municipal de Administración Tributaria (SEMAT-PC)
+                </b>
+            </p>
+            <p class="parrafo">
+                Nombre y Apellido: (Nombre del funcionario)
+                <br>
+                No. C.I. : (Cedula del funcionario)
+                <br>
+                Firma:__________________________
+            </p>
+        </div>
+        <div fxFlex="10"></div>
+        <div fxFlex="45" >
+            <p>
+                Por parte Interesada:
+            </p>
+            <p>
+                Nombre y Apellido: (Nombre del solicitante)
+                <br>
+                No. C.I. : (Cedula del solicitante)
+                <br>
+                Contribuyente: (Nombre de la empresa)
+                <br>
+                Firma:________________________
+            </p>
+            
+        </div>
+    </div>
+</div>
+<button (click)="imprimir()">
+    prueba
+</button>

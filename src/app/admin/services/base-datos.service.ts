@@ -17,4 +17,5 @@ export class BaseDatosService {
     
     return this.clienteHttp.post<Tramite>(this.API+'/Solicitudes.php',datos);
   }
+ 
 }

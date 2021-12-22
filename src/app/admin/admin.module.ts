@@ -6,6 +6,9 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 //Compoenentes
 import { HomeComponent } from './Pages/home/home.component';
 
@@ -41,7 +44,7 @@ import { SolvenciamComponent } from './Components/checkBoxs/solvenciam/solvencia
 import { LicenciaLicoresNuevaComponent } from './Components/checkBoxs/licencia-licores-nueva/licencia-licores-nueva.component';
 import { FormularioLicorNuevaComponent } from './Components/formulario-licor-nueva/formulario-licor-nueva.component';
 import { RenovacionliclicoComponent } from './Components/checkBoxs/renovacionliclico/renovacionliclico.component';
-import { DocumentoComponent } from './Components/documento/documento.component';
+import { DocumentoComponent } from './Components/documentos/Licencia de Actividades Económicas Nueva/documento.component';
 
 
 
@@ -88,7 +91,8 @@ import { DocumentoComponent } from './Components/documento/documento.component';
     SharedModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SweetAlert2Module
   ]
 })
 export class AdminModule { }

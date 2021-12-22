@@ -61,7 +61,9 @@ mat-card {
     display: flex;
     justify-content: center;
     
+    
 }
+
 .logo{
     box-shadow: 0px 17px 24px -5px rgba(0,0,0,0.56);
     -webkit-box-shadow: 0px 17px 24px -5px rgba(0,0,0,0.56);
@@ -100,7 +102,25 @@ mat-card {
     display: flex;
 }
 
-
+/*Estilos de los documentos*/
+.encabezado{
+    text-align:center;
+  }
+  .cuerpo,.parrafo{
+    text-align:justify;
+  }
+  #Documento{
+    width: 21.59cm;
+    height: 27.94cm;
+    border:1px solid black;
+    padding:1.27cm;
+    
+  }
+  .checkBoxs{
+    border:1px solid black;
+    margin-bottom:5px;
+  }
+  /*Fin de los estilos de los documentos*/
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; padding: 0;}
