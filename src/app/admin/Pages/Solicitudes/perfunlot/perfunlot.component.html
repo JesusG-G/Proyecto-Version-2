@@ -5,119 +5,27 @@
         </div>
         <mat-divider></mat-divider>
         <div class="formulario">
-        <form  autocomplete="off">
-            <!--Primero select de solicitudes-->
-            <div fxLayout="row">
-                <div fxFlex="100">
-                 <h3>Datos del Solicitante</h3>
-                    <mat-divider></mat-divider>
-                    <mat-form-field appearance="outline" class="max-width">
-                        <mat-label>Cedula</mat-label>
-                        <input matInput type="text">
-                    </mat-form-field>
-                    <div fxLayout="row">
-                        <div fxFlex="50">
-                            <mat-form-field appearance="outline" class="max-width">
-                                <mat-label>Nombres</mat-label>
-                                <input matInput type="text">
-                            </mat-form-field>
-                        </div>
-                        <div fxFlex="50">
-                            <mat-form-field appearance="outline" class="max-width">
-                                <mat-label>Apellidos</mat-label>
-                                <input matInput type="text">
-                            </mat-form-field>
-                        </div>
-                    </div>
-                  
-                </div>
-            </div>
-            <!--Datos de la empresa-->
-            <!--EMpresa-->
-            <h3>Datos de la Empresa</h3>
-            <mat-divider></mat-divider>
-            <mat-form-field appearance="outline" class="max-width">
-                <mat-label>Nombre de la Empresa</mat-label>
-                <input matInput type="text" 
-                       formControlName="empresa" 
-                       id="empresa"  
-                       placeholder="Empresa" 
-                       required 
-                       autofocus>
-                <span class="text-danger"
-                    >El Nombre de la Empresa es requerida</span>
-            </mat-form-field>
-            <div fxLayout="row">
-            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
-                <mat-label>RIF</mat-label>
-                <input matInput type="text" 
-                       formControlName="RIF" 
-                       id="RIF"  
-                       placeholder="RIF" 
-                       required 
-                       autofocus>
-                <span class="text-danger" 
-                    >El RIF es requerida</span>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="max-width" fxFlex="50">
-                <mat-label>Telefono</mat-label>
-                <input matInput type="text" 
-                       formControlName="telf" 
-                       id="telf"  
-                       placeholder="Telefono" 
-                       required 
-                       autofocus>
-                <span class="text-danger" 
-                    >El Telefono es requerida</span>
-            </mat-form-field>
-        </div>
-            <h3>Direccion</h3>
-            <mat-divider></mat-divider>
-            <mat-form-field appearance="outline" class="max-width">
-                <mat-label>Urbanización</mat-label>
-                <input matInput type="text" 
-                       formControlName="urb" 
-                       id="urb"  
-                       placeholder="Urbanización" 
-                       required 
-                       autofocus >
-                <span class="text-danger"
-                    >La Urbanización es requerida</span>
-            </mat-form-field>
-            <div fxLayout="row">
-                    <mat-form-field appearance="outline" class="max-width" fxFlex="50">
-                        <mat-label>Calle</mat-label>
-                        <input matInput type="text" 
-                            formControlName="calle" 
-                            id="calle"  
-                            placeholder="Calle" 
-                            required 
-                            autofocus>
-                        <span class="text-danger" 
-                            >La Calle es requerida</span>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" class="max-width" fxFlex="50">
-                        <mat-label>Casa/Local/Edificio</mat-label>
-                        <input matInput type="text" 
-                            formControlName="caloed" 
-                            name="caloed" id="caloed"  
-                            placeholder="Casa/Local/Edificio" 
-                            required 
-                            autofocus>
-                        <span class="text-danger" 
-                            >La Calle es requerida</span>
-                    </mat-form-field>
-            </div>
-            
+        <form  autocomplete="off"  [formGroup]="solicitud" (ngSubmit)="guardar()">
+            <app-formulario-datos></app-formulario-datos>
+            <app-agencialoteria></app-agencialoteria>
             
             <div fxLayout="row">
                 <button mat-raised-button color="warn" 
                         type="submit" 
                         class="btn btn-danger"
+                        [disabled]="solicitud.invalid"
                         >Enviar</button>
                 <span class="spacer"></span>
-                <button mat-raised-button color="warn" type="button" class="btn btn-danger">Limpiar</button> 
+                <button mat-raised-button color="warn" 
+                        type="button" 
+                        class="btn btn-danger" 
+                        (click)="LimpiarFormulario()">Limpiar</button> 
+                    <button mat-raised-button color="warn" 
+                    type="button" 
+                    class="btn btn-danger" 
+                    (click)="imprimir()">
+                        Imprimir
+                     </button>
             </div>
         
         </form>
@@ -126,8 +34,226 @@
 
     </div>
 </div>
-<!--[disabled]="solicitud.invalid"
- (click)="LimpiarFormulario()"-->
+
+<div id="Documento" *ngIf="mostrar!=false">
+    <div fxLayout="row" class="encabezado" >
+        <div fxFlex="15">
+            <img src="../../../../assets/escudo.jpg" alt="">
+        </div>
+        <div  fxFlex="70">
+           
+            <p >
+                Republica Bolivariana de Venezuela
+                <br>
+                Alcaldía del Municipio Puerto Cabello
+                <br>
+                Servicio Municipal de Administración Tributaria
+                <br>
+                Gerencia de Tramitación y asistencia al Contribuyente
+            </p>
+                <div class="subencabezado">
+                    <h4><b>ACTA DE RECEPCIÓN</b></h4>
+                    <h4><b>(PERMISO DE FUNCIONAMIENTO, AGENCIA DE LOTERÍA)</b></h4>
+                    <h5><b>({{respuesta.Codigo}})</b></h5>
+                </div>
+            
+        </div>
+        <div  fxFlex="15">
+            <img src="../../../../assets/semat logo.jpg" alt="">
+        </div>
+    </div>
+    <div>
+        
+        <p class="cuerpo">
+            En Puerto Cabello a los (días) ({{respuesta.Dia}}) días del mes de ({{respuesta.Mes}}) del año ({{respuesta.Ano}}) 
+    Ciudadano: {{funcionario.Nombres}} {{funcionario.Apellidos}}, C.I. No. {{funcionario.CI}}, en su carácter de:
+     “FUNCIONARIO” Adscrito al Servicio Municipal de Administración Tributaria (Semat-PC), hace constar que el(la) ciudadano(a) 
+    Representante(s) de la Empresa: {{respuesta.Nombre_Empresa}} 
+    Número de Rif: ({{respuesta.RIF}}), ubicación {{respuesta.Urbanizacion}},{{respuesta.Calle}},{{respuesta.CasaLocalEdificio}},
+    el señor(a) : {{respuesta.Nombres}} {{respuesta.Apellidos}}, cedula: {{respuesta.CI}}, teléfono: {{respuesta.Telefono}} asistió, 
+    hoy con la finalidad de consignar los siguientes documentos:
+
+        </p>
+        <div class="checkBoxs" >
+            <div fxLayout="column">
+                <div fxLayout="row">
+                    <label fxFlex="90">
+                      1.-Copia de la Licencia de Actividades Económicas
+                    </label>
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_1">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      2.-Copia del Registro Mercantil y/o copia Certificada de última modificación de Acta Constitutiva y Estatutos
+                    </label>
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_2">
+                    </mat-checkbox>
+                  </div>
+                
+                  <mat-radio-group >
+                      <div fxLayout="row">
+                        <label fxFlex="80">3.- Original del Certificado de Bomberos</label>
+                        <mat-radio-button [checked]="respuesta.CheckBox_3=='Vigente'" value="Vigente">Vigente</mat-radio-button>
+                        <mat-radio-button [checked]="respuesta.CheckBox_3=='Vencida'"value="Vencida">Vencida</mat-radio-button>
+                      </div>
+                    </mat-radio-group>
+                
+                  <br />
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      4.-Copia vigentem del Registro de información Fiscal (RIF)
+                    </label>
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_4">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                      <label fxFlex="90">
+                        5.-Copia(s) de la Cedula de Identidad del (los) Representante(s) Legal(es)
+                      </label>
+                      <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_5">
+                      </mat-checkbox>
+                    </div>
+                    <mat-radio-group >
+                      <div fxLayout="row">
+                        <label fxFlex="80">6.- Contrato de Arrendamiento Notariado</label>
+                        <mat-radio-button [checked]="respuesta.CheckBox_6=='Vigente'" value="Vigente">Vigente</mat-radio-button>
+                        <mat-radio-button [checked]="respuesta.CheckBox_6=='Vencida'" value="Vencida">Vencida</mat-radio-button>
+                      </div>
+                    </mat-radio-group>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      7.-Información de la ubicación exacta del local, indicando la distancia de Centros Asistenciales,
+                      Institutos Educativos y/o Templos Religiosos
+                    </label>
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_7">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      8.-Original del último Trimestre Cancelado
+                    </label>
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_8">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      9.-Reporte de Situación Fiscal del Sistema
+                    </label>
+                
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_9">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      10.-Copia del Documento de Propiedad del Inmueble
+                    </label>
+                
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_10">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90"> 11.-Recibo de PAgo de la Tasa respectiva: Casa Matríz 45 U.T. </label>
+                
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_11">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      12.-Recibo de Pago de la Tasa por Renovación Casa Matríz 30 U.T.
+                    </label>
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_12">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90"> 13.-Recibo de PAgo de la Tasa por Sucursal 10 U.T. </label>
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_13">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      14.-Recibo de Pago de la Tasa por Renovación Surcursal 5 U.T.
+                    </label>
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_14">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      15.-Recibo de Pago de la Tasa por Vendedor Independiente 30 U.T.
+                    </label>
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_15">
+                    </mat-checkbox>
+                  </div>
+                
+                  <div fxLayout="row">
+                    <label fxFlex="90">
+                      16.-Recibo de PAgo d ela Tasa de Renovación de Vendedor Independiente 10 U.T.
+                    </label>
+                
+                    <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_16">
+                    </mat-checkbox>
+                  </div>
+                
+            </div>
+            
+        </div>
+        <p class="parrafo">
+            Me comprometo a consignar de conformidad con lo establecido en el Art. 50 de la Ley Organica de Procedimientos Administrativos, 
+            me comprometo a consignar en oficio dirigido al (Semat-PC), en un plazo de quince (15) días, 
+            cualquier otro documento que el servicio Municipal de Administración Tributaria Puerto Cabello, 
+            considere necesario, para otorgar el registro de la Renovacion de Licencia Aduanal.
+                <br>
+            Se levanta la presente Acta No. {{respuesta.Codigo}} de dos folios, en tres (03) ejemplares del mismo tenor
+            y a un solo efecto,uno de los cuales queda en el poder del (la) interesado(a).
+            <br>
+            Conforme con lo antes solicitado, firman:
+
+        </p>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex="45" >
+            <p class="encabezado">
+                <b> 
+                    Por el Servicio Municipal de Administración Tributaria (SEMAT-PC)
+                </b>
+            </p>
+            <p class="parrafo">
+                Nombre y Apellido: {{funcionario.Nombres}} {{funcionario.Apellidos}}
+                <br>
+                No. C.I. : {{funcionario.CI}}
+                <br>
+                Firma:__________________________
+            </p>
+        </div>
+        <div fxFlex="10"></div>
+        <div fxFlex="45" >
+            <p>
+                Por parte Interesada:
+            </p>
+            <p>
+                Nombre y Apellido: {{respuesta.Nombres}} {{respuesta.Apellidos}}
+                <br>
+                No. C.I. : {{respuesta.CI}}
+                <br>
+                Contribuyente: {{respuesta.Nombre_Empresa}}
+                <br>
+                Firma:________________________
+            </p>
+            
+        </div>
+    </div>
+</div>
 
 
 

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Tramite } from 'src/app/admin/Interfaces/tramite';
+import { Funcionario, solicitud, Tramite } from 'src/app/admin/Interfaces/tramite';
 import { BaseDatosService } from 'src/app/admin/services/base-datos.service';
+
+import { jsPDF } from "jspdf";
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-retaceco',
@@ -18,6 +21,34 @@ export class RETACECOComponent implements OnInit {
   mes:number=this.fecha.getMonth()+1;
   ano:number=this.fecha.getFullYear();
   
+
+  mostrar:boolean=false;
+  datosStorage =JSON.parse(localStorage.getItem('token')!);
+  funcionario:Funcionario={
+    Nombres:this.datosStorage[0].Nombres,
+    Apellidos:this.datosStorage[0].Apellidos,
+    CI:this.datosStorage[0].CI
+  };
+  respuesta:solicitud={
+    Codigo:'',
+    Nombres:'',
+    Apellidos:'',
+    CI:'',
+    Nombre_Empresa:'',
+    RIF:'',
+    Telefono:'',
+    Urbanizacion:'',
+    Calle:'',
+    CasaLocalEdificio:'',
+    Dia:'',
+    Mes:'',
+    Ano:'',
+    CheckBox_1:'',
+    CheckBox_2:'',
+    CheckBox_3:'',
+    CheckBox_4:'',
+    CheckBox_5:''
+  };
   constructor(private fb: FormBuilder,
               private solicitudes: BaseDatosService) { }
 
@@ -90,7 +121,9 @@ export class RETACECOComponent implements OnInit {
 
 
     this.solicitudes.AgragarSolicitud(this.tramite)
-      .subscribe(resp=>console.log('Respuesta',resp));
+      .subscribe(resp=>{
+        this.respuesta=resp;
+      });
      //this.solicitud.reset();
     }
 
@@ -98,5 +131,44 @@ export class RETACECOComponent implements OnInit {
       this.solicitud.reset();
       this.solicitud.get('datos')?.get('tipoSolicitud')?.setValue('RETACECO');
     }
+//Imprimir
+public downloadPDF() {
+  // Extraemos e
+  const DATA:any = document.getElementById("Documento");
+  console.log(DATA);
+  //this.generarPDF(DATA);
+  const doc = new jsPDF('p', 'pt', 'letter');
+  const options = {
+    background: 'white',
+    scale: 1
+  };
+  html2canvas(DATA).then((canvas) => {
 
+    const img = canvas.toDataURL('image/PNG');
+
+    // Add image Canvas to PDF
+    const bufferX = 0;
+    const bufferY = 0;
+    const imgProps = (doc as any).getImageProperties(img);
+    const pdfWidth = doc.internal.pageSize.getWidth() ;
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
+    doc.save('retaceco.pdf')
+  })
+}
+
+
+public imprimir(){
+  setTimeout(() => {
+    this.mostrar=true;
+  }, 2);
+  
+
+  setTimeout(() => {
+    this.downloadPDF()
+  }, 5);
+  setTimeout(() => {
+    this.mostrar=false;
+  }, 7);
+}
 }

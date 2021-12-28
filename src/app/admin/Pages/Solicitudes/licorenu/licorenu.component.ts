@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Tramite } from 'src/app/admin/Interfaces/tramite';
+import { Funcionario, solicitud, Tramite } from 'src/app/admin/Interfaces/tramite';
 import { BaseDatosService } from 'src/app/admin/services/base-datos.service';
+
+
+import { jsPDF } from "jspdf";
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-licorenu',
@@ -17,6 +21,52 @@ export class LICORENUComponent implements OnInit {
   dia:number=this.fecha.getDate();
   mes:number=this.fecha.getMonth()+1;
   ano:number=this.fecha.getFullYear();
+
+  indoles:string[]=[
+    "MN",
+    "MY",
+    "C",
+    "CV"
+  ];
+
+  mostrar:boolean=false;
+  datosStorage =JSON.parse(localStorage.getItem('token')!);
+  funcionario:Funcionario={
+    Nombres:this.datosStorage[0].Nombres,
+    Apellidos:this.datosStorage[0].Apellidos,
+    CI:this.datosStorage[0].CI
+  };
+  respuesta:solicitud={
+    Codigo:'',
+    Nombre_Empresa:'',
+    RIF:'',
+    Urbanizacion:'',
+    Calle:'',
+    CasaLocalEdificio:'',
+    Dia:'',
+    Mes:'',
+    Ano:'',
+    CheckBox_1:'',
+    CheckBox_2:'',
+    CheckBox_3:'',
+    CheckBox_4:'',
+    CheckBox_5:'',
+    CheckBox_6:'',
+    CheckBox_7:'',
+    CheckBox_8:'',
+    CheckBox_9:'',
+    CheckBox_10:'',
+    CheckBox_11:'',
+    CheckBox_12:'',
+    CheckBox_13:'',
+    CheckBox_14:'',
+    CheckBox_15:'',
+    CheckBox_16:'',
+    CheckBox_17:''
+  };
+
+
+
   constructor(private fb: FormBuilder,
               private solicitudes: BaseDatosService) { }
 
@@ -102,7 +152,9 @@ export class LICORENUComponent implements OnInit {
 
 
     this.solicitudes.AgragarSolicitud(this.tramite)
-      .subscribe(resp=>console.log('Respuesta',resp));
+      .subscribe(resp=>{
+        this.respuesta=resp;
+      });
      //this.solicitud.reset();
     }
 
@@ -111,4 +163,44 @@ export class LICORENUComponent implements OnInit {
       this.solicitud.get('datos')?.get('tipoSolicitud')?.setValue('LICORENU');
     }
 
+    //Imprimir
+    public downloadPDF() {
+      // Extraemos e
+      const DATA:any = document.getElementById("Documento");
+      console.log(DATA);
+      //this.generarPDF(DATA);
+      const doc = new jsPDF('p', 'pt', 'letter');
+      const options = {
+        background: 'white',
+        scale: 1
+      };
+      html2canvas(DATA).then((canvas) => {
+  
+        const img = canvas.toDataURL('image/PNG');
+  
+        // Add image Canvas to PDF
+        const bufferX = 0;
+        const bufferY = 0;
+        const imgProps = (doc as any).getImageProperties(img);
+        const pdfWidth = doc.internal.pageSize.getWidth() ;
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
+        doc.save('licrenu.pdf')
+      })
+    }
+  
+  
+    public imprimir(){
+      setTimeout(() => {
+        this.mostrar=true;
+      }, 2);
+      
+
+      setTimeout(() => {
+        this.downloadPDF()
+      }, 5);
+      setTimeout(() => {
+        this.mostrar=false;
+      }, 7);
+    }
 }

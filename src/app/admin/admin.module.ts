@@ -45,6 +45,7 @@ import { LicenciaLicoresNuevaComponent } from './Components/checkBoxs/licencia-l
 import { FormularioLicorNuevaComponent } from './Components/formulario-licor-nueva/formulario-licor-nueva.component';
 import { RenovacionliclicoComponent } from './Components/checkBoxs/renovacionliclico/renovacionliclico.component';
 import { DocumentoComponent } from './Components/documentos/Licencia de Actividades Económicas Nueva/documento.component';
+import { AgencialoteriaComponent } from './Components/checkBoxs/agencialoteria/agencialoteria.component';
 
 
 
@@ -83,6 +84,7 @@ import { DocumentoComponent } from './Components/documentos/Licencia de Activida
     FormularioLicorNuevaComponent,
     RenovacionliclicoComponent,
     DocumentoComponent,
+    AgencialoteriaComponent,
   ],
   imports: [
     CommonModule,

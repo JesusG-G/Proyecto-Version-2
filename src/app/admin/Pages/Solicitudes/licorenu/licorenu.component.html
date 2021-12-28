@@ -19,6 +19,12 @@
                         type="button" 
                         class="btn btn-danger"
                         (click)="LimpiarFormulario()">Limpiar</button> 
+                        <button mat-raised-button color="warn" 
+                        type="button" 
+                        class="btn btn-danger" 
+                        (click)="imprimir()">
+                            Imprimir
+                         </button>
             </div>
         
         </form>
@@ -27,9 +33,230 @@
 
     </div>
 </div>
-<!--[disabled]="solicitud.invalid"
- -->
 
+<div id="Documento" *ngIf="mostrar!=false">
+    <div fxLayout="row" class="encabezado" >
+        <div fxFlex="15">
+            <img src="../../../../assets/escudo.jpg" alt="">
+        </div>
+        <div  fxFlex="70">
+           
+            <p >
+                Republica Bolivariana de Venezuela
+                <br>
+                Alcaldía del Municipio Puerto Cabello
+                <br>
+                Servicio Municipal de Administración Tributaria
+                <br>
+                Gerencia de Tramitación y asistencia al Contribuyente
+            </p>
+                <div class="subencabezado">
+                    <h4><b>ACTA DE RECEPCIÓN</b></h4>
+                    <h5><b>({{respuesta.Codigo}})</b></h5>
+                </div>
+            
+        </div>
+        <div  fxFlex="15">
+            <img src="../../../../assets/semat logo.jpg" alt="">
+        </div>
+    </div>
+    <div>
+        
+        <p class="cuerpo">
+            En Puerto Cabello a los (días) ({{respuesta.Dia}}) días del mes de ({{respuesta.Mes}}) del año ({{respuesta.Ano}}), el contibruyente {{respuesta.Nombre_Empresa}} 
+    Número de Rif: ({{respuesta.RIF}}), consignó los documentos que se indican a continuación, conjuntamente con la Solicitud No. {{respuesta.Codigo}} 
+    de fecha {{respuesta.Dia}}/{{respuesta.Mes}}/{{respuesta.Ano}}
+
+        </p>
+        <div class="checkBoxs" >
+            <div fxLayout="row">
+                <label fxFlex="90">
+                  1.-Copia de la Cedula de Identidad del Solicitante y del Administradorder
+                  si lo hubiera. (Legible)
+                </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_1">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  2.-Copia del Registro Mercantil o Acta Constitutiva Junta Directiva y
+                  Titulo de propiedad o documento donde conste el derecho al uso del
+                  inmueble
+                </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_2">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  3.-Copia del RIF de los socios, solicitante y del Administrador si lo
+                  hubiera
+                </label>
+            
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_3">
+                </mat-checkbox>
+              </div>
+            
+              <br />
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  4.-Copia de la Licencia de Actividades Económicas
+                </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_4">
+                </mat-checkbox>
+              </div>
+            
+              <br />
+              <span>5.-Indicar Indole del negocio</span>
+              <mat-form-field>
+                <mat-label>Indicar Indole del negocio</mat-label>
+                <mat-select [value]="respuesta.CheckBox_5">
+                  <mat-option
+                    [value]="indole"
+                    *ngFor="let indole of indoles; let i = index"
+                    required
+                    >{{ indole }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br />
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  6.-Uso Conforme y Zonificación, expedido por la División de planeamiento
+                  Urbano
+                </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_6">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  7.-Certificado de Solvencia de Permiso y Polociales del solicitante y/o
+                  administrador si lo hubiera.
+                </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_7">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  8.-Certificación de Antecedentes Penales y Policiales del solicitante y/o
+                  administrador si lo hubiera
+                </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_8">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  9.-Constancia de Residencia y domicilio, expedida por las autoridades
+                  competentes (cuando se trate de extranjeros)
+                </label>
+            
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_9">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  10.-Inventario del Establecimiento, donde refleje el capital invertido en
+                  el negocio, visado por un contador Publico Actualizado a la fecha de la
+                  solicitud
+                </label>
+            
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_10">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90"> 11.-Certificación de Bomberos Vigente </label>
+            
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_11">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  12.-En casos de solicitudes de indole Mayor o Menor indicar si funcionaran
+                  solos o anexos a abastos, supermercados agencia de festejos y si
+                  funcionaran o no conjuntamente dentro del mismo local
+                </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_12">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90"> 13.-Croquis o Plano de Ubicación del Local </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_13">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  14.-Opinión por escrito debidamente fundamentada emitida por el consejo
+                  Comunal, aprobada por más del 50% de los integrantes
+                </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_14">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  15.-Cinco fotos de negocio (03 interior del establecimiento y 02 de la
+                  fachada) deberán prestar 03 fotos de la cocina y mesa (tamaño 15 x 15
+                  indispoensable)
+                </label>
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_15">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  16.-Autorización notariada, en caso de tramitar a traves de un
+                  representante
+                </label>
+            
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_16">
+                </mat-checkbox>
+              </div>
+            
+              <div fxLayout="row">
+                <label fxFlex="90">
+                  17.-Traer los documentos en una carpeta marrón(oficio) con separadores,
+                  debiamente etiquetada y foliada en forma ascendente
+                </label>
+            
+                <mat-checkbox labelPosition="before" [checked]="respuesta.CheckBox_17">
+                </mat-checkbox>
+              </div>
+        </div>
+        <p class="parrafo">
+            Para los legales consiguientes y de acuerdo a lo establecido en el Atículo 45,46 y 50 de la Ley Orgánica de Procedimientos
+            Administrativos(LOPA), concatenada con el Art. 18 de la Ordenanza sobre Expedido de Bebidas Alcohólicas,
+            se levanta la presente acta en dos (02) ejemplares de los cuales uno (1) queda en poder del contribuyente.
+
+        </p>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex="45" >
+            <p class="parrafo">
+                Nombre y Apellido: {{funcionario.Nombres}} {{funcionario.Apellidos}}
+                <br>
+                Firma Funcionario receptor:__________________________
+            </p>
+        </div>
+        <div fxFlex="10"></div>
+        <div fxFlex="45" >
+            <p>
+                Nombre: {{respuesta.Nombre_Empresa}}
+                <br>
+                Firma del Contribuyente:________________________
+            </p>
+            
+        </div>
+    </div>
+</div>
 
 
 

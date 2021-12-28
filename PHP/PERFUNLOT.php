@@ -6,12 +6,20 @@
     $CheckBox_4=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_4));
     $CheckBox_5=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_5));
     $CheckBox_6=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_6));
-    
-    
+    $CheckBox_7=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_7));
+    $CheckBox_8=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_8));
+    $CheckBox_9=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_9));
+    $CheckBox_10=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_10));
+    $CheckBox_11=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_11));
+    $CheckBox_12=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_12));
+    $CheckBox_13=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_13));
+    $CheckBox_14=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_14));
+    $CheckBox_15=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_15));
+    $CheckBox_16=mysqli_real_escape_string($conexionBD,trim($request->CheckBox_16));
 
 
     //Licaenue
-    $sql="SELECT * FROM `extactec`";
+    $sql="SELECT * FROM `perfunlot`";
     $resultado=mysqli_query($conexionBD,$sql);
     $tamano=mysqli_num_rows($resultado);
     if($tamano<=0){
@@ -21,7 +29,7 @@
         $tamano=$tamano+1;
         $CodigoActa="{$Codigo}000{$tamano}{$Mes}{$Ano}";
     }
-    $sql = "INSERT INTO extactec(
+    $sql = "INSERT INTO perfunlot(
             `Codigo`, 
             `Nombres`, 
             `Apellidos`, 
@@ -40,8 +48,17 @@
             `CheckBox_3`, 
             `CheckBox_4`, 
             `CheckBox_5`, 
-            `CheckBox_6`
-            ) VALUES 
+            `CheckBox_6`,
+            `CheckBox_7`, 
+            `CheckBox_8`, 
+            `CheckBox_9`, 
+            `CheckBox_10`, 
+            `CheckBox_11`, 
+            `CheckBox_12`,
+            `CheckBox_13`,
+            `CheckBox_14`,
+            `CheckBox_15`,
+            `CheckBox_16`) VALUES 
             ('$CodigoActa',
             '$Nombres',
             '$Apellidos',
@@ -60,7 +77,17 @@
             '$CheckBox_3',
             '$CheckBox_4',
             '$CheckBox_5',
-            '$CheckBox_6'
+            '$CheckBox_6',
+            '$CheckBox_7',
+            '$CheckBox_8',
+            '$CheckBox_9',
+            '$CheckBox_10',
+            '$CheckBox_11',
+            '$CheckBox_12',
+            '$CheckBox_13',
+            '$CheckBox_14',
+            '$CheckBox_15',
+            '$CheckBox_16'
             )";
     if ($conexionBD->query($sql) === TRUE) {
         $authdata = [
@@ -82,9 +109,21 @@
             "CheckBox_3"=>$CheckBox_3,
             "CheckBox_4"=>$CheckBox_4,
             "CheckBox_5"=>$CheckBox_5,
-            "CheckBox_6"=>$CheckBox_6
+            "CheckBox_6"=>$CheckBox_6,
+            "CheckBox_7"=>$CheckBox_7,
+            "CheckBox_8"=>$CheckBox_8,
+            "CheckBox_9"=>$CheckBox_9,
+            "CheckBox_10"=>$CheckBox_10,
+            "CheckBox_11"=>$CheckBox_11,
+            "CheckBox_12"=>$CheckBox_12,
+            "CheckBox_13"=>$CheckBox_13,
+            "CheckBox_14"=>$CheckBox_14,
+            "CheckBox_15"=>$CheckBox_15,
+            "CheckBox_16"=>$CheckBox_16
+            
             
         ];
     echo json_encode($authdata);
     }
     
+?>

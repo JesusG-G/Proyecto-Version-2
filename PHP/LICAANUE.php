@@ -79,7 +79,7 @@
             )";
     if ($conexionBD->query($sql) === TRUE) {
         $authdata = [
-            "Codigo"=> $Codigo,
+            "Codigo"=> $CodigoActa,
             "Nombres" => $Nombres,
             "Apellidos"=>$Apellidos,
             "CI"=>$CI,
